@@ -1,7 +1,6 @@
 package com.selim.userservice.model;
 
 import com.selim.core.entity.BaseEntity;
-import com.selim.notificationservice.model.ConfirmCode;
 import lombok.*;
 
 import javax.persistence.Entity;

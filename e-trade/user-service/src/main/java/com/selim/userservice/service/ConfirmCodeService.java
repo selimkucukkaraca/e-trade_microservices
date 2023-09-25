@@ -1,7 +1,7 @@
-package com.selim.notificationservice.service;
+package com.selim.userservice.service;
 
-import com.selim.notificationservice.model.ConfirmCode;
-import com.selim.notificationservice.repository.ConfirmCodeRepository;
+import com.selim.userservice.model.ConfirmCode;
+import com.selim.userservice.repository.ConfirmCodeRepository;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,6 +15,10 @@ public class ConfirmCodeService {
 
     public void delete(ConfirmCode confirmCode) {
         confirmCodeRepository.delete(confirmCode);
+    }
+
+    public void deleteById(Long id){
+        confirmCodeRepository.deleteById(id);
     }
 
     public void save(ConfirmCode confirmCode) {

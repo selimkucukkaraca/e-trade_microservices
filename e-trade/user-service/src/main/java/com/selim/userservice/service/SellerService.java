@@ -2,9 +2,7 @@ package com.selim.userservice.service;
 
 import com.selim.core.exception.NotFoundException;
 import com.selim.core.exception.generic.GenericExistException;
-import com.selim.notificationservice.model.ConfirmCode;
-import com.selim.notificationservice.repository.ConfirmCodeRepository;
-import com.selim.notificationservice.service.ConfirmCodeService;
+import com.selim.userservice.model.ConfirmCode;
 import com.selim.notificationservice.service.MailSendService;
 import com.selim.userservice.dto.SellerDto;
 import com.selim.userservice.dto.converter.SellerConverter;
@@ -24,7 +22,6 @@ public class SellerService {
 
     private final MailSendService mailSendService;
     private final ConfirmCodeService confirmCodeService;
-    private final ConfirmCodeRepository confirmCodeRepository;
     private final SellerConverter sellerConverter;
     private final SellerRepository sellerRepository;
 
@@ -60,7 +57,7 @@ public class SellerService {
             return null;
         }
         seller.setActive(true);
-        confirmCodeRepository.deleteById(seller.getConfirmCode().getId());
+        confirmCodeService.deleteById(seller.getConfirmCode().getId());
         sellerRepository.save(seller);
         return sellerConverter.convertToDto(seller);
     }

@@ -1,4 +1,4 @@
-package com.selim.notificationservice.model;
+package com.selim.userservice.model;
 
 import com.selim.core.entity.BaseEntity;
 import lombok.*;

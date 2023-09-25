@@ -1,10 +1,12 @@
 package com.selim.categoryservice.dto.request;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class CreateSubCategoryRequest {
 
     private String categoryName;

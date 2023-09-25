@@ -14,15 +14,14 @@ import org.springframework.stereotype.Service;
 public class CategoryService {
 
     private final CategoryRepository categoryRepository;
-    private final CategoryMapper categoryMapper;
 
     public CategoryDto save(CreateCategoryRequest request){
-        var saved = categoryMapper.INSTANCE.toEntity(request);
+        var saved = CategoryMapper.INSTANCE.toEntity(request);
         if (categoryRepository.existsByCategoryName(saved.getCategoryName())) {
             throw new GenericExistException("Category already exist");
         }
         categoryRepository.save(saved);
-        return categoryMapper.INSTANCE.toDto(saved);
+        return CategoryMapper.INSTANCE.toDto(saved);
     }
 
     public void deleteCategory(String categoryName) {

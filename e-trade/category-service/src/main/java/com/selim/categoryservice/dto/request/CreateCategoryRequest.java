@@ -1,10 +1,14 @@
 package com.selim.categoryservice.dto.request;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.validation.constraints.NotBlank;
 
-@Data
+@Getter
+@Setter
+@ToString
 public class CreateCategoryRequest {
 
     @NotBlank

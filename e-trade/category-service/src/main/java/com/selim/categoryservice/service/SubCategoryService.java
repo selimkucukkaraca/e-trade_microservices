@@ -14,13 +14,12 @@ import org.springframework.stereotype.Service;
 public class SubCategoryService {
 
     private final SubCategoryRepository subCategoryRepository;
-    private final SubCategoryMapper subCategoryMapper;
     private final CategoryService categoryService;
 
 
     public SubCategoryDto save(CreateSubCategoryRequest request) {
         var category = categoryService.getByCategoryName(request.getCategoryName());
-        var saved = subCategoryMapper.INSTANCE.toEntity(request);
+        var saved = SubCategoryMapper.INSTANCE.toEntity(request);
 
         if (subCategoryRepository.existsBySubCategoryName(saved.getSubCategoryName())) {
             throw new GenericExistException("Sub category already exist");
@@ -29,7 +28,7 @@ public class SubCategoryService {
         subCategoryRepository.save(saved);
         category.getSubCategories().add(saved);
         categoryService.updateCategory(category);
-        return subCategoryMapper.INSTANCE.toDto(saved);
+        return SubCategoryMapper.INSTANCE.toDto(saved);
     }
 
     public void delete(String subCategoryName) {

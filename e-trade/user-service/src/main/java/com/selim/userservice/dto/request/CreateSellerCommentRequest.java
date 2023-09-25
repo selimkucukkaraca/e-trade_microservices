@@ -1,13 +1,13 @@
 package com.selim.userservice.dto.request;
 
+import lombok.Getter;
+import lombok.Setter;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
-import javax.validation.constraints.*;
-
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 public class CreateSellerCommentRequest {
 
     private String title;

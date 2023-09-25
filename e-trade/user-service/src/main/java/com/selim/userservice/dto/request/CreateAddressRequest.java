@@ -1,10 +1,10 @@
 package com.selim.userservice.dto.request;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 public class CreateAddressRequest {
 
     private String city;

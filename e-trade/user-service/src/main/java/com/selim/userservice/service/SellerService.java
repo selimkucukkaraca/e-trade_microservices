@@ -57,7 +57,7 @@ public class SellerService {
             return null;
         }
         seller.setActive(true);
-        confirmCodeService.deleteById(seller.getConfirmCode().getId());
+        //confirmCodeService.deleteById(seller.getConfirmCode().getId());
         sellerRepository.save(seller);
         return sellerConverter.convertToDto(seller);
     }

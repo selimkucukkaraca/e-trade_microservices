@@ -1,8 +1,8 @@
 package com.selim.categoryservice.service;
 
 import com.selim.categoryservice.dto.CategoryDto;
+import com.selim.categoryservice.dto.converter.CategoryConverter;
 import com.selim.categoryservice.dto.request.CreateCategoryRequest;
-import com.selim.categoryservice.mapper.CategoryMapper;
 import com.selim.categoryservice.model.Category;
 import com.selim.categoryservice.repository.CategoryRepository;
 import com.selim.core.exception.generic.GenericExistException;
@@ -14,14 +14,15 @@ import org.springframework.stereotype.Service;
 public class CategoryService {
 
     private final CategoryRepository categoryRepository;
+    private final CategoryConverter categoryConverter;
 
     public CategoryDto save(CreateCategoryRequest request){
-        var saved = CategoryMapper.INSTANCE.toEntity(request);
+        var saved = categoryConverter.toEntity(request);
         if (categoryRepository.existsByCategoryName(saved.getCategoryName())) {
             throw new GenericExistException("Category already exist");
         }
         categoryRepository.save(saved);
-        return CategoryMapper.INSTANCE.toDto(saved);
+        return categoryConverter.convertToDto(saved);
     }
 
     public void deleteCategory(String categoryName) {

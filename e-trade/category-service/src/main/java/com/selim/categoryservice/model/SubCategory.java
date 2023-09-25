@@ -14,4 +14,5 @@ import javax.persistence.Entity;
 public class SubCategory extends BaseEntity {
 
     private String subCategoryName;
+
 }

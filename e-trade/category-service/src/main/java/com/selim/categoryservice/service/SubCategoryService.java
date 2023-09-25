@@ -1,8 +1,8 @@
 package com.selim.categoryservice.service;
 
 import com.selim.categoryservice.dto.SubCategoryDto;
+import com.selim.categoryservice.dto.converter.SubCategoryConverter;
 import com.selim.categoryservice.dto.request.CreateSubCategoryRequest;
-import com.selim.categoryservice.mapper.SubCategoryMapper;
 import com.selim.categoryservice.model.SubCategory;
 import com.selim.categoryservice.repository.SubCategoryRepository;
 import com.selim.core.exception.generic.GenericExistException;
@@ -15,11 +15,12 @@ public class SubCategoryService {
 
     private final SubCategoryRepository subCategoryRepository;
     private final CategoryService categoryService;
+    private final SubCategoryConverter subCategoryConverter;
 
 
     public SubCategoryDto save(CreateSubCategoryRequest request) {
         var category = categoryService.getByCategoryName(request.getCategoryName());
-        var saved = SubCategoryMapper.INSTANCE.toEntity(request);
+        var saved = subCategoryConverter.toEntity(request);
 
         if (subCategoryRepository.existsBySubCategoryName(saved.getSubCategoryName())) {
             throw new GenericExistException("Sub category already exist");
@@ -28,7 +29,7 @@ public class SubCategoryService {
         subCategoryRepository.save(saved);
         category.getSubCategories().add(saved);
         categoryService.updateCategory(category);
-        return SubCategoryMapper.INSTANCE.toDto(saved);
+        return subCategoryConverter.convertToDto(saved);
     }
 
     public void delete(String subCategoryName) {

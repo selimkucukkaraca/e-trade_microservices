@@ -19,4 +19,7 @@ public class Category extends BaseEntity{
     @ToString.Exclude
     private List<SubCategory> subCategories;
 
+    public Category(String categoryName) {
+        this.categoryName = categoryName;
+    }
 }

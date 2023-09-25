@@ -22,4 +22,12 @@ public class SellerComment extends BaseEntity {
     @ManyToOne
     private User user;
     private String sellerCommentId = UUID.randomUUID().toString();
+
+    public SellerComment(String title, String body, int star, Seller seller, User user) {
+        this.title = title;
+        this.body = body;
+        this.star = star;
+        this.seller = seller;
+        this.user = user;
+    }
 }

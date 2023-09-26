@@ -1,4 +1,4 @@
-package com.selim.userservice.model;
+package com.selim.productservice.model;
 
 import com.selim.core.entity.BaseEntity;
 import lombok.*;

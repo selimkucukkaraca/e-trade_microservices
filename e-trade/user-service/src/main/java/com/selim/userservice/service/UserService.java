@@ -2,12 +2,12 @@ package com.selim.userservice.service;
 
 import com.selim.core.exception.NotFoundException;
 import com.selim.core.exception.generic.GenericExistException;
-import com.selim.userservice.model.ConfirmCode;
+import com.selim.entity.user.ConfirmCode;
+import com.selim.entity.user.User;
+import com.selim.shared.user.UserDto;
+import com.selim.shared.user.converter.UserConverter;
+import com.selim.shared.user.request.CreateUserRequest;
 import com.selim.notificationservice.service.MailSendService;
-import com.selim.userservice.dto.UserDto;
-import com.selim.userservice.dto.converter.UserConverter;
-import com.selim.userservice.dto.request.CreateUserRequest;
-import com.selim.userservice.model.User;
 import com.selim.userservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

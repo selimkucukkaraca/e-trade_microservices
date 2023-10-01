@@ -1,7 +1,7 @@
 package com.selim.userservice.controller;
 
-import com.selim.userservice.dto.SellerDto;
-import com.selim.userservice.dto.request.CreateSellerRequest;
+import com.selim.shared.user.SellerDto;
+import com.selim.shared.user.request.CreateSellerRequest;
 import com.selim.userservice.service.SellerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

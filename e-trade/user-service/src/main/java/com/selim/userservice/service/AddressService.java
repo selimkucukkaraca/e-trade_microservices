@@ -2,10 +2,10 @@ package com.selim.userservice.service;
 
 
 import com.selim.core.exception.NotFoundException;
-import com.selim.userservice.dto.AddressDto;
-import com.selim.userservice.dto.converter.AddressConverter;
-import com.selim.userservice.dto.request.CreateAddressRequest;
-import com.selim.userservice.model.Address;
+import com.selim.entity.user.Address;
+import com.selim.shared.user.AddressDto;
+import com.selim.shared.user.converter.AddressConverter;
+import com.selim.shared.user.request.CreateAddressRequest;
 import com.selim.userservice.repository.AddressRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

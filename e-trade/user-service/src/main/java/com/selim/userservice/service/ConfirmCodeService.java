@@ -1,6 +1,6 @@
 package com.selim.userservice.service;
 
-import com.selim.userservice.model.ConfirmCode;
+import com.selim.entity.user.ConfirmCode;
 import com.selim.userservice.repository.ConfirmCodeRepository;
 import org.springframework.stereotype.Service;
 

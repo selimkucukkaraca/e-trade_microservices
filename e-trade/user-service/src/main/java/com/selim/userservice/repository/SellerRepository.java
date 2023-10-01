@@ -1,6 +1,6 @@
 package com.selim.userservice.repository;
 
-import com.selim.userservice.model.Seller;
+import com.selim.entity.user.Seller;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

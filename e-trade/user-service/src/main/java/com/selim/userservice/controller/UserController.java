@@ -1,7 +1,7 @@
 package com.selim.userservice.controller;
 
-import com.selim.userservice.dto.UserDto;
-import com.selim.userservice.dto.request.CreateUserRequest;
+import com.selim.shared.user.UserDto;
+import com.selim.shared.user.request.CreateUserRequest;
 import com.selim.userservice.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

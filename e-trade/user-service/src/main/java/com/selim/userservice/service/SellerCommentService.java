@@ -2,9 +2,9 @@ package com.selim.userservice.service;
 
 import com.selim.core.exception.NotFoundException;
 import com.selim.core.exception.generic.GenericExistException;
-import com.selim.userservice.dto.SellerCommentDto;
-import com.selim.userservice.dto.converter.SellerCommentConverter;
-import com.selim.userservice.dto.request.CreateSellerCommentRequest;
+import com.selim.shared.user.SellerCommentDto;
+import com.selim.shared.user.converter.SellerCommentConverter;
+import com.selim.shared.user.request.CreateSellerCommentRequest;
 import com.selim.userservice.repository.SellerCommentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

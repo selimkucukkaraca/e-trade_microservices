@@ -1,6 +1,6 @@
 package com.selim.userservice.controller;
 
-import com.selim.userservice.dto.AddressDto;
+import com.selim.shared.user.AddressDto;
 import com.selim.userservice.service.AddressService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

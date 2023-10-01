@@ -1,9 +1,9 @@
 package com.selim.productservice.service;
 
+import com.selim.entity.product.PromoCode;
 import com.selim.productservice.dto.request.ConfirmCartRequest;
 import com.selim.productservice.model.ConfirmedCart;
 import com.selim.productservice.model.Product;
-import com.selim.productservice.model.PromoCode;
 import com.selim.userservice.model.Address;
 import com.selim.userservice.service.AddressService;
 import com.selim.userservice.service.UserService;

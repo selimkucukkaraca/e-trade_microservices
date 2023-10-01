@@ -7,13 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="shared" />
         <module name="category-service" />
         <module name="api-gateway-service" />
         <module name="product-service" />
-        <module name="e-trade" />
         <module name="user-service" />
         <module name="eureka-server" />
         <module name="notification-service" />
+        <module name="entity" />
       </profile>
       <profile name="Annotation profile for e-trade" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -26,16 +27,6 @@
         <module name="core" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="api-gateway-service" target="11" />
-      <module name="category-service" target="11" />
-      <module name="core" target="11" />
-      <module name="e-trade" target="1.8" />
-      <module name="eureka-server" target="11" />
-      <module name="notification-service" target="11" />
-      <module name="product-service" target="11" />
-      <module name="user-service" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -43,9 +34,11 @@
       <module name="category-service" options="-parameters" />
       <module name="core" options="-parameters" />
       <module name="e-trade" options="-parameters" />
+      <module name="entity" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="notification-service" options="-parameters" />
       <module name="product-service" options="-parameters" />
+      <module name="shared" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>

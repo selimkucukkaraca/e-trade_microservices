@@ -2,10 +2,10 @@ package com.selim.productservice.service;
 
 import com.selim.core.exception.NotFoundException;
 import com.selim.core.exception.generic.GenericExistException;
+import com.selim.entity.product.ProductComment;
 import com.selim.productservice.dto.ProductCommentDto;
 import com.selim.productservice.dto.converter.ProductCommentConverter;
 import com.selim.productservice.dto.request.CreateProductCommentRequest;
-import com.selim.productservice.model.ProductComment;
 import com.selim.productservice.repository.ProductCommentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

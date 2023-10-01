@@ -1,6 +1,6 @@
 package com.selim.productservice.repository;
 
-import com.selim.productservice.model.PromoCode;
+import com.selim.entity.product.PromoCode;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

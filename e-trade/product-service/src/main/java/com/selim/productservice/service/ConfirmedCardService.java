@@ -1,8 +1,8 @@
 package com.selim.productservice.service;
 
+import com.selim.entity.product.ConfirmedCart;
 import com.selim.productservice.dto.ConfirmedCartDto;
 import com.selim.productservice.dto.converter.CartConverter;
-import com.selim.productservice.model.ConfirmedCart;
 import com.selim.productservice.repository.ConfirmedCartRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

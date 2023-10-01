@@ -1,9 +1,9 @@
 package com.selim.productservice.service;
 
+import com.selim.entity.product.Cart;
+import com.selim.entity.product.Product;
 import com.selim.productservice.dto.CartDto;
 import com.selim.productservice.dto.converter.CartConverter;
-import com.selim.productservice.model.Cart;
-import com.selim.productservice.model.Product;
 import com.selim.productservice.repository.CartRepository;
 import com.selim.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;

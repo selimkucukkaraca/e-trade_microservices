@@ -1,8 +1,8 @@
 package com.selim.productservice.service;
 
 
+import com.selim.entity.product.BankAccount;
 import com.selim.productservice.dto.request.ConfirmCartRequest;
-import com.selim.productservice.model.BankAccount;
 import com.selim.productservice.repository.BankAccountRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

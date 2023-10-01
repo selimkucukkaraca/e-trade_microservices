@@ -1,6 +1,6 @@
 package com.selim.productservice.repository;
 
-import com.selim.productservice.model.ProductComment;
+import com.selim.entity.product.ProductComment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,9 +1,9 @@
 package com.selim.productservice.service;
 
+import com.selim.entity.product.PromoCode;
 import com.selim.productservice.dto.PromoCodeDto;
 import com.selim.productservice.dto.converter.PromoCodeConverter;
 import com.selim.productservice.dto.request.CreatePromoCodeRequest;
-import com.selim.productservice.model.PromoCode;
 import com.selim.productservice.repository.PromoCodeRepository;
 import com.selim.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;

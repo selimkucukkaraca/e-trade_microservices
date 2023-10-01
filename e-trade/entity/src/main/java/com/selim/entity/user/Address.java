@@ -29,9 +29,4 @@ public class Address extends BaseEntity {
         this.apartmentNumber = apartmentNumber;
         this.phoneNumber = phoneNumber;
     }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }

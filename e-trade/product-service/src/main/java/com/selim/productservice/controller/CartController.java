@@ -1,7 +1,7 @@
 package com.selim.productservice.controller;
 
-import com.selim.productservice.dto.CartDto;
 import com.selim.productservice.service.CartService;
+import com.selim.shared.product.CartDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

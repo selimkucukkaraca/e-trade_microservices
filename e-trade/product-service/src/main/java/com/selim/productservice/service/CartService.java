@@ -4,6 +4,7 @@ import com.selim.entity.product.Cart;
 import com.selim.entity.product.Product;
 import com.selim.productservice.repository.CartRepository;
 import com.selim.shared.product.CartDto;
+import com.selim.shared.product.converter.CartConverter;
 import com.selim.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,12 +1,10 @@
 package com.selim.productservice.service;
 
+import com.selim.entity.product.ConfirmedCart;
+import com.selim.entity.product.Product;
 import com.selim.entity.product.PromoCode;
-import com.selim.productservice.dto.request.ConfirmCartRequest;
-import com.selim.productservice.model.ConfirmedCart;
-import com.selim.productservice.model.Product;
-import com.selim.userservice.model.Address;
-import com.selim.userservice.service.AddressService;
-import com.selim.userservice.service.UserService;
+import com.selim.entity.user.Address;
+import com.selim.shared.product.request.ConfirmCartRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

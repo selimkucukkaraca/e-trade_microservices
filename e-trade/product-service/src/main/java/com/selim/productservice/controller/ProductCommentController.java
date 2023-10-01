@@ -1,8 +1,8 @@
 package com.selim.productservice.controller;
 
-import com.selim.productservice.dto.ProductCommentDto;
-import com.selim.productservice.dto.request.CreateProductCommentRequest;
 import com.selim.productservice.service.ProductCommentService;
+import com.selim.shared.product.ProductCommentDto;
+import com.selim.shared.product.request.CreateProductCommentRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

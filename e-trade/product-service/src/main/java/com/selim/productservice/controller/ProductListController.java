@@ -1,7 +1,7 @@
 package com.selim.productservice.controller;
 
-import com.selim.productservice.dto.ProductDto;
 import com.selim.productservice.service.ProductListService;
+import com.selim.shared.product.ProductDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

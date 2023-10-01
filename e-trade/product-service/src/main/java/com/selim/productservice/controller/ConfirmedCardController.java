@@ -1,7 +1,7 @@
 package com.selim.productservice.controller;
 
-import com.selim.productservice.dto.ConfirmedCartDto;
 import com.selim.productservice.service.ConfirmedCardService;
+import com.selim.shared.product.ConfirmedCartDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

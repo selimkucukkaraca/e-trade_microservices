@@ -1,8 +1,8 @@
 package com.selim.productservice.controller;
 
-import com.selim.productservice.dto.BrandDto;
-import com.selim.productservice.dto.request.CreateBrandRequest;
 import com.selim.productservice.service.BrandService;
+import com.selim.shared.product.BrandDto;
+import com.selim.shared.product.request.CreateBrandRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

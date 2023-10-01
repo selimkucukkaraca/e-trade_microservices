@@ -1,8 +1,8 @@
 package com.selim.productservice.controller;
 
-import com.selim.productservice.dto.ProductDto;
-import com.selim.productservice.dto.request.CreateProductRequest;
 import com.selim.productservice.service.ProductService;
+import com.selim.shared.product.ProductDto;
+import com.selim.shared.product.request.CreateProductRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

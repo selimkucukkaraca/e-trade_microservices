@@ -1,5 +1,6 @@
 package com.selim.userservice.controller;
 
+import com.selim.entity.user.User;
 import com.selim.shared.user.UserDto;
 import com.selim.shared.user.request.CreateUserRequest;
 import com.selim.userservice.service.UserService;
@@ -57,6 +58,12 @@ public class UserController {
     public ResponseEntity<UserDto> deActiveUser(@RequestParam String mail) {
         return ResponseEntity
                 .ok(userService.deActivateUser(mail));
+    }
+
+    @GetMapping("/mail")
+    public ResponseEntity<User> getUserByMail(@RequestParam String mail) {
+        return ResponseEntity
+                .ok(userService.getUserByMail(mail));
     }
 
 }

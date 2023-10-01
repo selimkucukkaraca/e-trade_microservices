@@ -2,10 +2,10 @@ package com.selim.productservice.service;
 
 import com.selim.entity.product.Cart;
 import com.selim.entity.product.Product;
+import com.selim.productservice.client.UserServiceClient;
 import com.selim.productservice.repository.CartRepository;
 import com.selim.shared.product.CartDto;
 import com.selim.shared.product.converter.CartConverter;
-import com.selim.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,17 +17,15 @@ public class CartService {
 
     private final CartRepository cartRepository;
     private final CartConverter cartConverter;
-    private final UserService userService;
     private final ProductService productService;
-
-
+    private final UserServiceClient userServiceClient;
 
     public CartDto save(String mail, String productId) {
-        var fromUser = userService.getUserByMail(mail);
+        var fromDbUser = userServiceClient.getUserByMail(mail).getBody();
         var fromProduct = productService.getProductObjectByProductId(productId);
         List<Product> products = List.of(fromProduct);
 
-        Cart cart = new Cart(products, fromUser);
+        Cart cart = new Cart(products,fromDbUser);
         fromProduct.setStock(fromProduct.getStock() - 1);
         cartRepository.save(cart);
         productService.updateProduct(fromProduct);

@@ -1,8 +1,11 @@
 package com.selim.userservice.controller;
 
+import com.selim.entity.user.Address;
 import com.selim.shared.user.AddressDto;
+import com.selim.shared.user.request.CreateAddressRequest;
 import com.selim.userservice.service.AddressService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +18,13 @@ import java.util.List;
 public class AddressController {
 
     private final AddressService addressService;
+
+    @PostMapping
+    public ResponseEntity<Address> save(@RequestBody CreateAddressRequest request){
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(addressService.save(request));
+    }
 
     @DeleteMapping
     public ResponseEntity<?> delete(@RequestParam String addressId) {

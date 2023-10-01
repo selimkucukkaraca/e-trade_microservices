@@ -1,6 +1,8 @@
 package com.selim.productservice.service;
 
 import com.selim.entity.product.PromoCode;
+import com.selim.entity.user.User;
+import com.selim.productservice.client.UserServiceClient;
 import com.selim.productservice.repository.PromoCodeRepository;
 import com.selim.shared.product.PromoCodeDto;
 import com.selim.shared.product.converter.PromoCodeConverter;
@@ -15,16 +17,16 @@ import org.springframework.web.server.ResponseStatusException;
 public class PromoCodeService {
 
     private final PromoCodeRepository promoCodeRepository;
-    private final UserService userService;
     private final PromoCodeConverter promoCodeConverter;
-
+    private final UserServiceClient userServiceClient;
 
     public PromoCodeDto save(CreatePromoCodeRequest request) {
+        User fromDbUser = userServiceClient.getUserByMail(request.getUserMail()).getBody();
         PromoCode promoCode = new PromoCode(
                 request.getCode(),
                 request.getAmount(),
                 request.getEndDate(),
-                userService.getUserByMail(request.getUserMail())
+                fromDbUser
         );
 
         String codeText = request.getCode() + String.valueOf(request.getAmount());

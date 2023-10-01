@@ -1,5 +1,6 @@
 package com.selim.productservice.controller;
 
+import com.selim.entity.product.Product;
 import com.selim.productservice.service.ProductService;
 import com.selim.shared.product.ProductDto;
 import com.selim.shared.product.request.CreateProductRequest;
@@ -35,5 +36,11 @@ public class ProductController {
     public ResponseEntity<ProductDto> getByProductId(@PathVariable String productId) {
         return ResponseEntity
                 .ok(productService.getByProductId(productId));
+    }
+
+    @GetMapping("/productId")
+    public ResponseEntity<Product> getProductByProductId(@RequestBody String productId) {
+        return ResponseEntity
+                .ok(productService.getProductByProductId(productId));
     }
 }

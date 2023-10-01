@@ -3,6 +3,7 @@ package com.selim.productservice.service;
 import com.selim.core.exception.NotFoundException;
 import com.selim.core.exception.generic.GenericExistException;
 import com.selim.entity.product.ProductComment;
+import com.selim.productservice.client.UserServiceClient;
 import com.selim.productservice.repository.ProductCommentRepository;
 import com.selim.shared.product.ProductCommentDto;
 import com.selim.shared.product.converter.ProductCommentConverter;
@@ -16,9 +17,12 @@ public class ProductCommentService {
 
     private final ProductCommentRepository productCommentRepository;
     private final ProductCommentConverter productCommentConverter;
+    private final UserServiceClient userServiceClient;
 
     public ProductCommentDto save(CreateProductCommentRequest request) {
-        var saved = productCommentConverter.toEntity(request);
+        var fromDbUser = userServiceClient.getProductByProductId(request.getProductId()).getBody();
+        var fromDbProduct = userServiceClient.getUserByMail(request.getUserMail()).getBody();
+        var saved = productCommentConverter.toEntity(request,fromDbUser,fromDbProduct);
         if (request.getStar() < 0) {
             throw new GenericExistException("you must rating by star ");
         }

@@ -2,6 +2,7 @@ package com.selim.categoryservice.controller;
 
 
 import com.selim.categoryservice.service.CategoryListService;
+import com.selim.entity.category.Category;
 import com.selim.shared.category.CategoryDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,13 @@ public class CategoryListController {
     public ResponseEntity<CategoryDto> getCategoryByCategoryName(@PathVariable String categoryName) {
         return ResponseEntity
                 .ok(categoryListService.getCategoryByCategoryName(categoryName));
+
+    }
+
+    @GetMapping("/categoryName")
+    public ResponseEntity<Category> getByCategoryName(@RequestBody String categoryName) {
+        return ResponseEntity
+                .ok(categoryListService.getByCategoryName(categoryName));
 
     }
 }

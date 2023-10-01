@@ -2,6 +2,7 @@ package com.selim.categoryservice.service;
 
 
 import com.selim.categoryservice.repository.CategoryRepository;
+import com.selim.core.exception.NotFoundException;
 import com.selim.core.exception.generic.GenericExistException;
 import com.selim.entity.category.Category;
 import com.selim.shared.category.CategoryDto;
@@ -32,7 +33,8 @@ public class CategoryService {
     }
 
     public Category getByCategoryName(String categoryName) {
-        return categoryRepository.findByCategoryName(categoryName);
+        return categoryRepository.findByCategoryName(categoryName)
+                .orElseThrow(() -> new NotFoundException(""));
     }
 
     protected void updateCategory(Category category) {

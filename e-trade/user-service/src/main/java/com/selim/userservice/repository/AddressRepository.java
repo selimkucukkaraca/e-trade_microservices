@@ -9,5 +9,4 @@ public interface AddressRepository extends JpaRepository<Address, Long> {
 
     Optional<Address> findAddressByAddressId(String addressId);
     Optional<Address> getAddressByAddressId(String id);
-
 }

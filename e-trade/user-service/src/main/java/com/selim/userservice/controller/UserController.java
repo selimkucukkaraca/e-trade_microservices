@@ -4,6 +4,7 @@ import com.selim.entity.user.User;
 import com.selim.shared.user.UserDto;
 import com.selim.shared.user.request.CreateUserRequest;
 import com.selim.userservice.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,13 +12,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/user")
 @CrossOrigin
+@RequiredArgsConstructor
 public class UserController {
 
     private final UserService userService;
-
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
 
     @PostMapping
     public ResponseEntity<UserDto> save(@RequestBody CreateUserRequest request) {

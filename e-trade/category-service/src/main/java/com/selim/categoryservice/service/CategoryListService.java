@@ -1,8 +1,8 @@
 package com.selim.categoryservice.service;
 
-import com.selim.categoryservice.dto.CategoryDto;
-import com.selim.categoryservice.dto.converter.CategoryConverter;
 import com.selim.categoryservice.repository.CategoryRepository;
+import com.selim.shared.category.CategoryDto;
+import com.selim.shared.category.converter.CategoryConverter;
 import org.springframework.stereotype.Service;
 
 @Service

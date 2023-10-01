@@ -1,9 +1,10 @@
 package com.selim.productservice.service;
 
 import com.selim.entity.product.Brand;
-import com.selim.productservice.dto.ProductDto;
-import com.selim.productservice.dto.converter.ProductConverter;
+
 import com.selim.productservice.repository.ProductRepository;
+import com.selim.shared.product.ProductDto;
+import com.selim.shared.product.converter.ProductConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

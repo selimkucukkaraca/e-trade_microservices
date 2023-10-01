@@ -1,8 +1,8 @@
 package com.selim.categoryservice.controller;
 
 
-import com.selim.categoryservice.dto.CategoryDto;
 import com.selim.categoryservice.service.CategoryListService;
+import com.selim.shared.category.CategoryDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

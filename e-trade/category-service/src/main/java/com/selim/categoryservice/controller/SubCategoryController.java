@@ -1,8 +1,8 @@
 package com.selim.categoryservice.controller;
 
-import com.selim.categoryservice.dto.SubCategoryDto;
-import com.selim.categoryservice.dto.request.CreateSubCategoryRequest;
 import com.selim.categoryservice.service.SubCategoryService;
+import com.selim.shared.category.SubCategoryDto;
+import com.selim.shared.category.request.CreateSubCategoryRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

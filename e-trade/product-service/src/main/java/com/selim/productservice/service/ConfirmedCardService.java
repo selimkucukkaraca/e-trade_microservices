@@ -1,9 +1,9 @@
 package com.selim.productservice.service;
 
 import com.selim.entity.product.ConfirmedCart;
-import com.selim.productservice.dto.ConfirmedCartDto;
-import com.selim.productservice.dto.converter.CartConverter;
 import com.selim.productservice.repository.ConfirmedCartRepository;
+import com.selim.shared.product.ConfirmedCartDto;
+import com.selim.shared.product.converter.CartConverter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;

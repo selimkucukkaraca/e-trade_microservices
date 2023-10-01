@@ -1,11 +1,12 @@
 package com.selim.categoryservice.service;
 
-import com.selim.categoryservice.dto.CategoryDto;
-import com.selim.categoryservice.dto.converter.CategoryConverter;
-import com.selim.categoryservice.dto.request.CreateCategoryRequest;
-import com.selim.categoryservice.model.Category;
+
 import com.selim.categoryservice.repository.CategoryRepository;
 import com.selim.core.exception.generic.GenericExistException;
+import com.selim.entity.category.Category;
+import com.selim.shared.category.CategoryDto;
+import com.selim.shared.category.converter.CategoryConverter;
+import com.selim.shared.category.request.CreateCategoryRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

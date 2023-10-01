@@ -2,10 +2,10 @@ package com.selim.productservice.service;
 
 import com.selim.core.exception.NotFoundException;
 import com.selim.entity.product.Brand;
-import com.selim.productservice.dto.BrandDto;
-import com.selim.productservice.dto.converter.BrandConverter;
-import com.selim.productservice.dto.request.CreateBrandRequest;
 import com.selim.productservice.repository.BrandRepository;
+import com.selim.shared.product.BrandDto;
+import com.selim.shared.product.converter.BrandConverter;
+import com.selim.shared.product.request.CreateBrandRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

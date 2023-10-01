@@ -1,11 +1,10 @@
 package com.selim.productservice.service;
 
 import com.selim.entity.product.PromoCode;
-import com.selim.productservice.dto.PromoCodeDto;
-import com.selim.productservice.dto.converter.PromoCodeConverter;
-import com.selim.productservice.dto.request.CreatePromoCodeRequest;
 import com.selim.productservice.repository.PromoCodeRepository;
-import com.selim.userservice.service.UserService;
+import com.selim.shared.product.PromoCodeDto;
+import com.selim.shared.product.converter.PromoCodeConverter;
+import com.selim.shared.product.request.CreatePromoCodeRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

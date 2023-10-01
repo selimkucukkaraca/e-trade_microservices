@@ -33,7 +33,8 @@ public class PromoCodeService {
         promoCode.setCodeText(codeText);
 
         promoCodeRepository.save(promoCode);
-        return promoCodeConverter.convertToDto(promoCode,null); //TODO
+        assert fromDbUser != null;
+        return promoCodeConverter.convertToDto(promoCode,fromDbUser);
     }
 
     public PromoCode getByPublicId(String publicId) {

@@ -4,18 +4,16 @@ package com.selim.productservice.service;
 import com.selim.entity.product.BankAccount;
 import com.selim.productservice.repository.BankAccountRepository;
 import com.selim.shared.product.request.ConfirmCartRequest;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 @Service
+@RequiredArgsConstructor
 public class BankAccountService {
 
     private final BankAccountRepository bankAccountRepository;
-
-    public BankAccountService(BankAccountRepository bankAccountRepository) {
-        this.bankAccountRepository = bankAccountRepository;
-    }
 
     protected BankAccount save(BankAccount bankAccount) {
         return bankAccountRepository.save(bankAccount);

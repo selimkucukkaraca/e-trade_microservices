@@ -1,0 +1,1127 @@
+{
+	"info": {
+		"_postman_id": "96295763-ea30-4689-bbef-ec5bd5085f07",
+		"name": "E-trade Microservices Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user-service",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "save user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"test\",\r\n    \"password\" : \"test\",\r\n    \"mail\" : \"test2@hotmail.com\",\r\n    \"imageUrl\" : \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/v1/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/user?mail=test2@hotmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"user"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "test2@hotmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "send confirm code",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/user/send-confirm-code?mail=test2@hotmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"send-confirm-code"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "test2@hotmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by user mail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/user/mail?mail=test2@hotmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"mail"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "test2@hotmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "active user",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/user?mail&code",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"user"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": null
+										},
+										{
+											"key": "code",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deactive user",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/user/deActive-user?mail",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"deActive-user"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by user mail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/user/test2@hotmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"test2@hotmail.com"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "seller",
+					"item": [
+						{
+							"name": "save seller",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"test\",\r\n    \"password\" : \"test\",\r\n    \"mail\" : \"test@hotmail.com\",\r\n    \"imageUrl\" : \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/v1/seller",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"seller"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete seller",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/seller?mail=test@hotmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"seller"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "test@hotmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "send confirm code",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/seller/send-confirm-code?mail=test@hotmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"seller",
+										"send-confirm-code"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": "test@hotmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "activate seller",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/seller/active-seller?mail&code",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"seller",
+										"active-seller"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": null
+										},
+										{
+											"key": "code",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "de active seller",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/seller/deActive-seller?mail",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"seller",
+										"deActive-seller"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by seller mail",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "seller comment",
+					"item": [
+						{
+							"name": "save seller comment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"Perfect seller !\",\r\n    \"body\" : \"Perfect seller !\",\r\n    \"star\" : 3,\r\n    \"sellerMail\" : \"test@hotmail.com\",\r\n    \"userMail\" : \"test@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/v1/seller-comment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"seller-comment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete seller comment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/seller-comment?sellerCommentId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"seller-comment"
+									],
+									"query": [
+										{
+											"key": "sellerCommentId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get seller comment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "address",
+					"item": [
+						{
+							"name": "save address",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "delete address",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/addresses?addressId=test",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"addresses"
+									],
+									"query": [
+										{
+											"key": "addressId",
+											"value": "test"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get address by id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "get address by user mail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/v1/addresses/user-mail/test",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"v1",
+										"addresses",
+										"user-mail",
+										"test"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "product-service",
+			"item": [
+				{
+					"name": "product",
+					"item": [
+						{
+							"name": "save product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"productName\" : \"t-shirt\",\r\n\"productDetails\" : \"%100 cotton\",\r\n\"productPrice\" : 500,\r\n\"stock\" : 1000,\r\n\"productImageUrl\" : \"\",\r\n\"brand\" : \"Zara\",\r\n\"categoryName\" : \"Clothes\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8099/api/v1/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete product",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8099/api/v1/product?productId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"product"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get product by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8099/api/v1/product/{productId}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"{productId}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get product by name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8099/api/v1/product-list/{productName}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"product-list",
+										"{productName}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get product by price",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8099/api/v1/product-list/get-by-price?min&max",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"product-list",
+										"get-by-price"
+									],
+									"query": [
+										{
+											"key": "min",
+											"value": null
+										},
+										{
+											"key": "max",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get product by brand",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8099/api/v1/product-list/get-by-brand/{brand}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"product-list",
+										"get-by-brand",
+										"{brand}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "buy product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"cardNumber\" : \"2756384453745032\",\r\n\"cvv\" : 236,\r\n\"expirationDate\" : \"7/2044\",\r\n\"nameAndSurname\" : \"selim karaca\",\r\n\"cartId\" : \"60395fbf-b563-4bd4-ad85-521b54c55950\",\r\n\"userMail\" : \"a@hotmail.com\",\r\n\"codeText\": \"WIN150.0\",\r\n\"address\" : {\r\n    \"city\" : \"a\",\r\n    \"district\" : \"a\",\r\n    \"street\" : \"a\",\r\n    \"apartmentNumber\" : \"5\",\r\n    \"phoneNumber\" : \"5334123212\"\r\n}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8099/api/v1/buy-product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"buy-product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save promo code",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userMail\" : \"a\",\r\n    \"code\" : \"a\",\r\n    \"amount\" : 123,\r\n    \"endDate\" : \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8099/api/v1/promo-code",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"promo-code"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "product comment",
+					"item": [
+						{
+							"name": "save comment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"Perfect product !\",\r\n    \"body\" : \"Perfect product !\",\r\n    \"star\" : 6,\r\n    \"userMail\" : \"a@hotmail.com\",\r\n    \"productId\" : \"abaa8bb5-fd74-4d04-bed5-43dc460de782\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8099/api/v1/product-comment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"product-comment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete comment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8099/api/v1/product-comment?productCommentId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"product-comment"
+									],
+									"query": [
+										{
+											"key": "productCommentId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by product comment id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8099/api/v1/product-comment/{productCommentId}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"product-comment",
+										"{productCommentId}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "cart",
+					"item": [
+						{
+							"name": "get all cart",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8099/api/v1/confirmed-cart/get-all?page&size",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"confirmed-cart",
+										"get-all"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": null
+										},
+										{
+											"key": "size",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8099/api/v1/cart?mail&productId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									],
+									"query": [
+										{
+											"key": "mail",
+											"value": null
+										},
+										{
+											"key": "productId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete cart",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8099/api/v1/cart?cartId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									],
+									"query": [
+										{
+											"key": "cartId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "brand",
+					"item": [
+						{
+							"name": "save brand",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"brand\" : \"Zara\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8099/api/v1/brand",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"brand"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete brand",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8099/api/v1/brand?brandId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8099",
+									"path": [
+										"api",
+										"v1",
+										"brand"
+									],
+									"query": [
+										{
+											"key": "brandId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "category-service",
+			"item": [
+				{
+					"name": "save category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\" : \"a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/v1/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/v1/category?categoryName",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"category"
+							],
+							"query": [
+								{
+									"key": "categoryName",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by category name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/v1/category-list/{categoryName}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"category-list",
+								"{categoryName}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save sub category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\" : \"test12345678\",\r\n    \"subCategoryName\" : \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/v1/sub-category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"sub-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete sub category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/v1/sub-category?subCategoryName",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"sub-category"
+							],
+							"query": [
+								{
+									"key": "subCategoryName",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

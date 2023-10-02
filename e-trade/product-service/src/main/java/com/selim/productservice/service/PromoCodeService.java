@@ -8,6 +8,9 @@ import com.selim.shared.product.PromoCodeDto;
 import com.selim.shared.product.converter.PromoCodeConverter;
 import com.selim.shared.product.request.CreatePromoCodeRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -20,6 +23,7 @@ public class PromoCodeService {
     private final PromoCodeConverter promoCodeConverter;
     private final UserServiceClient userServiceClient;
 
+    @CachePut(value = "promoCodes", key = "#request")
     public PromoCodeDto save(CreatePromoCodeRequest request) {
         User fromDbUser = userServiceClient.getUserByMail(request.getUserMail()).getBody();
         PromoCode promoCode = new PromoCode(
@@ -37,16 +41,19 @@ public class PromoCodeService {
         return promoCodeConverter.convertToDto(promoCode,fromDbUser);
     }
 
+    @Cacheable(value = "promoCodes", key = "#publicId")
     public PromoCode getByPublicId(String publicId) {
         return promoCodeRepository.findPromoCodeByPublicId(publicId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "promo code not found"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "promo code not found: " + publicId));
     }
 
+    @CacheEvict(value = "promoCodes", key = "#publicId")
     public void delete(String publicId) {
         PromoCode fromDbCode = getByPublicId(publicId);
         promoCodeRepository.delete(fromDbCode);
     }
 
+    @Cacheable(value = "promoCodes", key = "#codeText")
     public PromoCode getByCodeText(String codeText) {
         return promoCodeRepository.findPromoCodeByCodeText(codeText)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "promo code not found"));

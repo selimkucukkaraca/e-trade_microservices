@@ -6,6 +6,8 @@ import com.selim.shared.product.ConfirmedCartDto;
 import com.selim.shared.product.converter.CartConverter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -21,12 +23,13 @@ public class ConfirmedCardService {
     private final ConfirmedCartRepository confirmedCartRepository;
     private final CartConverter cartConverter;
 
-
+    @CachePut(value = "confirmedCards", key = "#confirmedCart")
     public ConfirmedCart save(ConfirmedCart confirmedCart) {
         log.info("cart info:" + confirmedCart);
         return confirmedCartRepository.save(confirmedCart);
     }
 
+    @Cacheable(value = "confirmedCards", key = "#page and #size")
     public List<ConfirmedCartDto> getAll(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
 

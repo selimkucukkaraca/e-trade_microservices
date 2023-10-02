@@ -7,6 +7,8 @@ import com.selim.productservice.repository.CartRepository;
 import com.selim.shared.product.CartDto;
 import com.selim.shared.product.converter.CartConverter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +22,7 @@ public class CartService {
     private final ProductService productService;
     private final UserServiceClient userServiceClient;
 
+    @CachePut(value = "carts", key = "#productId")
     public CartDto save(String mail, String productId) {
         var fromDbUser = userServiceClient.getUserByMail(mail).getBody();
         var fromProduct = productService.getProductObjectByProductId(productId);
@@ -36,6 +39,7 @@ public class CartService {
         return cartRepository.findCartByCartId(cartId);
     }
 
+    @CacheEvict(value = "carts", key = "#cartId")
     public void deleteByCartId(String cartId) {
         var fromCart = getCart(cartId);
         cartRepository.delete(fromCart);

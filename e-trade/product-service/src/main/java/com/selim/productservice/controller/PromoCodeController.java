@@ -23,4 +23,12 @@ public class PromoCodeController {
                 .status(HttpStatus.CREATED)
                 .body(promoCodeService.save(request));
     }
+
+    @DeleteMapping
+    public ResponseEntity<?> delete(@RequestParam String publicId){
+        promoCodeService.delete(publicId);
+        return ResponseEntity
+                .noContent()
+                .build();
+    }
 }

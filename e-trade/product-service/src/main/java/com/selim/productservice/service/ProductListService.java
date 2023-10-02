@@ -6,6 +6,7 @@ import com.selim.productservice.repository.ProductRepository;
 import com.selim.shared.product.ProductDto;
 import com.selim.shared.product.converter.ProductConverter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class ProductListService {
     private final ProductConverter productConverter;
     private final BrandService brandService;
 
-
+    @Cacheable(value = "productLists", key = "#productName")
     public List<ProductDto> getProductByProductName(String productName) {
         return productRepository.findProductByProductName(productName)
                 .stream()
@@ -27,6 +28,7 @@ public class ProductListService {
                 .collect(Collectors.toList());
     }
 
+    @Cacheable(value = "productLists", key = "#min and #max")
     public List<ProductDto> getProductByProductPrice(double min, double max) {
         return productRepository.findAll()
                 .stream()
@@ -37,6 +39,7 @@ public class ProductListService {
                 .collect(Collectors.toList());
     }
 
+    @Cacheable(value = "productLists", key = "#brand")
     public List<ProductDto> getProductByProductBrand(String brand) {
         Brand fromDbBrand = brandService.getBrandByBrand(brand);
         return productRepository.getProductByBrand(fromDbBrand)

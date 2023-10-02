@@ -1,6 +1,5 @@
 package com.selim.userservice.service;
 
-import com.selim.core.exception.NotFoundException;
 import com.selim.core.exception.generic.GenericExistException;
 import com.selim.entity.user.ConfirmCode;
 import com.selim.entity.user.Seller;
@@ -10,11 +9,13 @@ import com.selim.shared.user.converter.SellerConverter;
 import com.selim.shared.user.request.CreateSellerRequest;
 import com.selim.userservice.repository.SellerRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import static com.selim.notificationservice.service.MailConstant.CONFIRM_CODE_DESCRIPTION;
 import static com.selim.notificationservice.service.MailConstant.CONFIRM_CODE_TITLE;
-
 
 @Service
 @RequiredArgsConstructor
@@ -25,6 +26,7 @@ public class SellerService {
     private final SellerConverter sellerConverter;
     private final SellerRepository sellerRepository;
 
+    @CachePut(value = "sellers", key = "#request")
     public SellerDto save(CreateSellerRequest request) {
         var saved = sellerConverter.toEntity(request);
         if (sellerRepository.existsSellerByMail(saved.getMail())) {
@@ -34,19 +36,21 @@ public class SellerService {
         return sellerConverter.convertToDto(saved);
     }
 
+    @CacheEvict(value = "sellers", key = "#mail")
     public void delete(String mail) {
         var fromSeller = getSellerByMail(mail);
         sellerRepository.delete(fromSeller);
     }
 
+    @Cacheable(value = "sellers", key = "#mail")
     public Seller getSellerByMail(String mail) {
         return sellerRepository.findSellerByMail(mail)
-                .orElseThrow(() -> new NotFoundException(""));
+                .orElseThrow(() -> new GenericExistException("Mail not found: " + mail));
     }
 
     public SellerDto getByMail(String mail) {
         var fromDbSeller = sellerRepository.findSellerByMail(mail)
-                .orElseThrow(() -> new NotFoundException("Mail not found: " + mail));
+                .orElseThrow(() -> new GenericExistException("Mail not found: " + mail));
         return sellerConverter.convertToDto(fromDbSeller);
     }
 

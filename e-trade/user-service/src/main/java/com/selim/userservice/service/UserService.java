@@ -1,6 +1,5 @@
 package com.selim.userservice.service;
 
-import com.selim.core.exception.NotFoundException;
 import com.selim.core.exception.generic.GenericExistException;
 import com.selim.entity.user.ConfirmCode;
 import com.selim.entity.user.User;
@@ -10,11 +9,13 @@ import com.selim.shared.user.request.CreateUserRequest;
 import com.selim.notificationservice.service.MailSendService;
 import com.selim.userservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import static com.selim.notificationservice.service.MailConstant.CONFIRM_CODE_DESCRIPTION;
 import static com.selim.notificationservice.service.MailConstant.CONFIRM_CODE_TITLE;
-
 
 @Service
 @RequiredArgsConstructor
@@ -25,6 +26,7 @@ public class UserService {
     private final UserConverter userConverter;
     private final UserRepository userRepository;
 
+    @CachePut(value = "users", key = "#request")
     public UserDto save(CreateUserRequest request) {
         var saved = userConverter.toEntity(request);
         if (userRepository.existsUserByMail(saved.getMail())) {
@@ -34,19 +36,22 @@ public class UserService {
         return userConverter.convertToDto(saved);
     }
 
+    @CacheEvict(value = "users", key = "#mail")
     public void delete(String mail) {
         var fromUser = getUserByMail(mail);
         userRepository.delete(fromUser);
     }
 
+    @Cacheable(value = "users", key = "#mail")
     public User getUserByMail(String mail) {
         return userRepository.findUserByMail(mail)
-                .orElseThrow(() -> new NotFoundException(""));
+                .orElseThrow(() -> new GenericExistException("Mail not found: " + mail));
     }
 
+    @Cacheable(value = "users", key = "#mail")
     public UserDto getByMail(String mail) {
         var fromDbUser = userRepository.findUserByMail(mail)
-                .orElseThrow(() -> new NotFoundException("Mail not found: " + mail));
+                .orElseThrow(() -> new GenericExistException("Mail not found: " + mail));
         return userConverter.convertToDto(fromDbUser);
     }
 

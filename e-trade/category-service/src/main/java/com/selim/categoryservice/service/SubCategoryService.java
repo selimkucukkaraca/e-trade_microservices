@@ -7,6 +7,9 @@ import com.selim.shared.category.SubCategoryDto;
 import com.selim.shared.category.converter.SubCategoryConverter;
 import com.selim.shared.category.request.CreateSubCategoryRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,7 +20,7 @@ public class SubCategoryService {
     private final CategoryService categoryService;
     private final SubCategoryConverter subCategoryConverter;
 
-
+    @CachePut(value = "subCategories", key = "#request")
     public SubCategoryDto save(CreateSubCategoryRequest request) {
         var category = categoryService.getByCategoryName(request.getCategoryName());
         var saved = subCategoryConverter.toEntity(request);
@@ -32,11 +35,13 @@ public class SubCategoryService {
         return subCategoryConverter.convertToDto(saved);
     }
 
+    @CacheEvict(value = "subCategories", key = "#subCategoryName")
     public void delete(String subCategoryName) {
         var subCategory = getBySubCategoryName(subCategoryName);
         subCategoryRepository.delete(subCategory);
     }
 
+    @Cacheable(value = "subCategories", key = "#subCategoryName")
     public SubCategory getBySubCategoryName(String subCategoryName){
         return subCategoryRepository.findBySubCategoryName(subCategoryName);
     }

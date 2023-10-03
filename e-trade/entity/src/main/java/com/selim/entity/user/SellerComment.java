@@ -23,6 +23,17 @@ public class SellerComment extends BaseEntity {
     private User user;
     private String sellerCommentId = UUID.randomUUID().toString();
 
+    public SellerComment(Long id,String title, String body,
+                         int star, Seller seller, User user, String sellerCommentId) {
+        super.setId(id);
+        this.title = title;
+        this.body = body;
+        this.star = star;
+        this.seller = seller;
+        this.user = user;
+        this.sellerCommentId = sellerCommentId;
+    }
+
     public SellerComment(String title, String body, int star,
                          Seller seller, User user) {
         this.title = title;

@@ -22,10 +22,21 @@ public class Seller extends BaseEntity {
     @OneToOne
     private ConfirmCode confirmCode;
 
+    public Seller(Long id, String username, String password, String mail, String imageUrl, boolean isActive, ConfirmCode confirmCode) {
+        super.setId(id);
+        this.username = username;
+        this.password = password;
+        this.mail = mail;
+        this.imageUrl = imageUrl;
+        this.isActive = isActive;
+        this.confirmCode = confirmCode;
+    }
+
     public Seller(String username, String password, String mail, String imageUrl) {
         this.username = username;
         this.password = password;
         this.mail = mail;
         this.imageUrl = imageUrl;
     }
+
 }

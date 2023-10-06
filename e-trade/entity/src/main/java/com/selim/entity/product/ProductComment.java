@@ -26,11 +26,15 @@ public class ProductComment extends BaseEntity {
     @ManyToOne
     private User user;
 
-    public ProductComment(String title, String body, int star, User user, Product product) {
+    public ProductComment(Long id,String title, String body,
+                          int star, Product product, String productCommentId, User user) {
+        super.setId(id);
         this.title = title;
         this.body = body;
         this.star = star;
-        this.user = user;
         this.product = product;
+        this.productCommentId = productCommentId;
+        this.user = user;
     }
+
 }

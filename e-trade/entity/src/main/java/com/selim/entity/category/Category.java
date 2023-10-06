@@ -19,6 +19,12 @@ public class Category extends BaseEntity{
     @ToString.Exclude
     private List<SubCategory> subCategories;
 
+    public Category(Long id,String categoryName, List<SubCategory> subCategories) {
+        super.setId(id);
+        this.categoryName = categoryName;
+        this.subCategories = subCategories;
+    }
+
     public Category(String categoryName) {
         this.categoryName = categoryName;
     }

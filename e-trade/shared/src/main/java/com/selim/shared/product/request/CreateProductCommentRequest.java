@@ -1,5 +1,6 @@
 package com.selim.shared.product.request;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,7 @@ import static com.selim.shared.constant.ErrorMessage.STAR_REQUEST_ERROR_MESSAGE;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class CreateProductCommentRequest {
 
     private String title;

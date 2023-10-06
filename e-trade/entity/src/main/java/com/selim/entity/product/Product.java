@@ -30,6 +30,20 @@ public class Product extends BaseEntity {
     @ManyToOne
     private Brand brand;
 
+    public Product(Long id,String productName, String productDetails, double productPrice, int stock,
+                   String productImageUrl, Seller seller, Category category, String productId, Brand brand) {
+        super.setId(id);
+        this.productName = productName;
+        this.productDetails = productDetails;
+        this.productPrice = productPrice;
+        this.stock = stock;
+        this.productImageUrl = productImageUrl;
+        this.seller = seller;
+        this.category = category;
+        this.productId = productId;
+        this.brand = brand;
+    }
+
     public Product(String productName, String productDetails,
                    double productPrice, int stock, String productImageUrl,
                    Brand brand, Category category) {

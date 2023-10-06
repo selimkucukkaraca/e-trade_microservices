@@ -18,4 +18,13 @@ public class BankAccount extends BaseEntity {
     private int cvv;
     private String expirationDate;
     private double balance;
+
+    public BankAccount(Long id,String cardNumber, String nameAndLastname, int cvv, String expirationDate, double balance) {
+        super.setId(id);
+        this.cardNumber = cardNumber;
+        this.nameAndLastname = nameAndLastname;
+        this.cvv = cvv;
+        this.expirationDate = expirationDate;
+        this.balance = balance;
+    }
 }

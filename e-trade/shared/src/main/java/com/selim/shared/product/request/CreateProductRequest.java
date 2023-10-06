@@ -1,10 +1,12 @@
 package com.selim.shared.product.request;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class CreateProductRequest {
 
     private String productName;

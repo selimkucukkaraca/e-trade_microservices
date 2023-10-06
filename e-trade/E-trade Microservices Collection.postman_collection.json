@@ -26,7 +26,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8085/api/v1/user",
+									"raw": "http://localhost:8079/api/v1/user",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -47,7 +47,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/user?mail=test2@hotmail.com",
+									"raw": "http://localhost:8079/api/v1/user?mail=test2@hotmail.com",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -74,7 +74,7 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/user/send-confirm-code?mail=test2@hotmail.com",
+									"raw": "http://localhost:8079/api/v1/user/send-confirm-code?mail=test2@hotmail.com",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -102,7 +102,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/user/mail?mail=test2@hotmail.com",
+									"raw": "http://localhost:8079/api/v1/user/mail?mail=test2@hotmail.com",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -130,7 +130,7 @@
 								"method": "PATCH",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/user?mail&code",
+									"raw": "http://localhost:8079/api/v1/user?mail&code",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -161,7 +161,7 @@
 								"method": "PATCH",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/user/deActive-user?mail",
+									"raw": "http://localhost:8079/api/v1/user/deActive-user?mail",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -189,7 +189,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/user/test2@hotmail.com",
+									"raw": "http://localhost:8079/api/v1/user/test2@hotmail.com",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -232,7 +232,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8085/api/v1/seller",
+									"raw": "http://localhost:8079/api/v1/seller",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -253,7 +253,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/seller?mail=test@hotmail.com",
+									"raw": "http://localhost:8079/api/v1/seller?mail=test@hotmail.com",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -280,7 +280,7 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/seller/send-confirm-code?mail=test@hotmail.com",
+									"raw": "http://localhost:8079/api/v1/seller/send-confirm-code?mail=test@hotmail.com",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -308,7 +308,7 @@
 								"method": "PATCH",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/seller/active-seller?mail&code",
+									"raw": "http://localhost:8079/api/v1/seller/active-seller?mail&code",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -340,7 +340,7 @@
 								"method": "PATCH",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/seller/deActive-seller?mail",
+									"raw": "http://localhost:8079/api/v1/seller/deActive-seller?mail",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -390,7 +390,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8085/api/v1/seller-comment",
+									"raw": "http://localhost:8079/api/v1/seller-comment",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -411,7 +411,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/seller-comment?sellerCommentId",
+									"raw": "http://localhost:8079/api/v1/seller-comment?sellerCommentId",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -459,7 +459,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/addresses?addressId=test",
+									"raw": "http://localhost:8079/api/v1/addresses?addressId=test",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -494,7 +494,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8085/api/v1/addresses/user-mail/test",
+									"raw": "http://localhost:8079/api/v1/addresses/user-mail/test",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -536,7 +536,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8099/api/v1/product",
+									"raw": "http://localhost:8079/api/v1/product",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -557,7 +557,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8099/api/v1/product?productId",
+									"raw": "http://localhost:8079/api/v1/product?productId",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -584,7 +584,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8099/api/v1/product/{productId}",
+									"raw": "http://localhost:8079/api/v1/product/{productId}",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -606,7 +606,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8099/api/v1/product-list/{productName}",
+									"raw": "http://localhost:8079/api/v1/product-list/{productName}",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -628,7 +628,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8099/api/v1/product-list/get-by-price?min&max",
+									"raw": "http://localhost:8079/api/v1/product-list/get-by-price?min&max",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -660,7 +660,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8099/api/v1/product-list/get-by-brand/{brand}",
+									"raw": "http://localhost:8079/api/v1/product-list/get-by-brand/{brand}",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -692,7 +692,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8099/api/v1/buy-product",
+									"raw": "http://localhost:8079/api/v1/buy-product",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -722,7 +722,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8099/api/v1/promo-code",
+									"raw": "http://localhost:8079/api/v1/promo-code",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -757,7 +757,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8099/api/v1/product-comment",
+									"raw": "http://localhost:8079/api/v1/product-comment",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -778,7 +778,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8099/api/v1/product-comment?productCommentId",
+									"raw": "http://localhost:8079/api/v1/product-comment?productCommentId",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -805,7 +805,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8099/api/v1/product-comment/{productCommentId}",
+									"raw": "http://localhost:8079/api/v1/product-comment/{productCommentId}",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -832,7 +832,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8099/api/v1/confirmed-cart/get-all?page&size",
+									"raw": "http://localhost:8079/api/v1/confirmed-cart/get-all?page&size",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -864,7 +864,7 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8099/api/v1/cart?mail&productId",
+									"raw": "http://localhost:8079/api/v1/cart?mail&productId",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -895,7 +895,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8099/api/v1/cart?cartId",
+									"raw": "http://localhost:8079/api/v1/cart?cartId",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -936,7 +936,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8099/api/v1/brand",
+									"raw": "http://localhost:8079/api/v1/brand",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -957,7 +957,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8099/api/v1/brand?brandId",
+									"raw": "http://localhost:8079/api/v1/brand?brandId",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1000,7 +1000,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8090/api/v1/category",
+							"raw": "http://localhost:8079/api/v1/category",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1021,7 +1021,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8090/api/v1/category?categoryName",
+							"raw": "http://localhost:8079/api/v1/category?categoryName",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1048,7 +1048,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8090/api/v1/category-list/{categoryName}",
+							"raw": "http://localhost:8079/api/v1/category-list/{categoryName}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1079,7 +1079,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8090/api/v1/sub-category",
+							"raw": "http://localhost:8079/api/v1/sub-category",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1100,7 +1100,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8090/api/v1/sub-category?subCategoryName",
+							"raw": "http://localhost:8079/api/v1/sub-category?subCategoryName",
 							"protocol": "http",
 							"host": [
 								"localhost"

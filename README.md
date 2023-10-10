@@ -25,7 +25,6 @@ ___
   <li>Spring Boot</li>
   <li>MySQL Database</li>
   <li>Hibernate</li>
-  <li>Spring Security</li>
   <li>Spring Data</li>
   <li>Lombok</li>
   <li>Docker</li>

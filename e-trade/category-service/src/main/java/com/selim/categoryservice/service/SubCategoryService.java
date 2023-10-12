@@ -45,9 +45,4 @@ public class SubCategoryService {
     public SubCategory getBySubCategoryName(String subCategoryName){
         return subCategoryRepository.findBySubCategoryName(subCategoryName);
     }
-
-    protected void updateSubCategoryName(SubCategory subCategory){
-        subCategoryRepository.save(subCategory);
-    }
-
 }

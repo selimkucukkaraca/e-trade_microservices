@@ -9,7 +9,7 @@ import com.selim.shared.category.request.CreateSubCategoryRequest;
 
 import java.util.List;
 
-public class TestUtil {
+public abstract class TestUtil {
 
     public CreateSubCategoryRequest getCreateSubCategoryRequest() {
         return new CreateSubCategoryRequest("test", "test");

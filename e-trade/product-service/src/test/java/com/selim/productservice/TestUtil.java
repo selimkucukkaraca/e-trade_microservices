@@ -10,7 +10,7 @@ import com.selim.shared.product.request.CreateProductRequest;
 
 import java.util.List;
 
-public class TestUtil {
+public abstract class TestUtil {
 
     public List<BankAccount> getBankAccountList() {
         return List.of(new BankAccount(1L, "test", "test", 0, "test", 1L));

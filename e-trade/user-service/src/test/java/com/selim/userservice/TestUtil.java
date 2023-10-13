@@ -12,7 +12,7 @@ import com.selim.shared.user.request.CreateUserRequest;
 
 import java.util.List;
 
-public class TestUtil {
+public abstract class TestUtil {
 
     public CreateUserRequest getCreateUserRequest() {
         return new CreateUserRequest("test", "test", "test", "test");

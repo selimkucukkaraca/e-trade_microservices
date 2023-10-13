@@ -25,7 +25,7 @@ public class UserController {
     }
 
     @DeleteMapping
-    public ResponseEntity<?> delete(@RequestParam String mail) {
+    public ResponseEntity<Void> delete(@RequestParam String mail) {
         userService.delete(mail);
         return ResponseEntity
                 .noContent()
@@ -41,9 +41,9 @@ public class UserController {
     }
 
     @GetMapping("/{mail}")
-    public ResponseEntity<UserDto> getByMail(@PathVariable String mail) {
+    public ResponseEntity<User> getByMail(@PathVariable String mail) {
         return ResponseEntity
-                .ok(userService.getByMail(mail));
+                .ok(userService.getUserByMail(mail));
     }
 
     @PatchMapping("/active-user")
@@ -59,9 +59,9 @@ public class UserController {
     }
 
     @GetMapping("/mail")
-    public ResponseEntity<User> getUserByMail(@RequestParam String mail) {
+    public ResponseEntity<UserDto> getUserByMail(@RequestParam String mail) {
         return ResponseEntity
-                .ok(userService.getUserByMail(mail));
+                .ok(userService.getByMail(mail));
     }
 
 }

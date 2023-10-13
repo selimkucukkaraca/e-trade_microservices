@@ -24,7 +24,7 @@ public class ProductCommentService {
     @CachePut(value = "productComments", key = "#request")
     public ProductCommentDto save(CreateProductCommentRequest request) {
         var fromDbUser = userServiceClient.getProductByProductId(request.getProductId()).getBody();
-        var fromDbProduct = userServiceClient.getUserByMail(request.getUserMail()).getBody();
+        var fromDbProduct = userServiceClient.getByMail(request.getUserMail()).getBody();
         var saved = productCommentConverter.toEntity(request,fromDbUser,fromDbProduct);
         if (request.getStar() < 0) {
             throw new GenericExistException("you must rating by star 0-5 ");

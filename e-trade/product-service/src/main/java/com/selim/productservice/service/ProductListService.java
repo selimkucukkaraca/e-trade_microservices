@@ -22,7 +22,7 @@ public class ProductListService {
 
     @Cacheable(value = "productLists", key = "#productName")
     public List<ProductDto> getProductByProductName(String productName) {
-        return productRepository.findProductByProductName(productName)
+        return productRepository.findByProductName(productName)
                 .stream()
                 .map(productConverter::convertToDto)
                 .collect(Collectors.toList());
@@ -42,7 +42,7 @@ public class ProductListService {
     @Cacheable(value = "productLists", key = "#brand")
     public List<ProductDto> getProductByProductBrand(String brand) {
         Brand fromDbBrand = brandService.getBrandByBrand(brand);
-        return productRepository.getProductByBrand(fromDbBrand)
+        return productRepository.findByBrand(fromDbBrand)
                 .stream()
                 .map(productConverter::convertToDto)
                 .collect(Collectors.toList());

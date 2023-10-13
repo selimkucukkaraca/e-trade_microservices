@@ -8,6 +8,7 @@ import com.selim.shared.product.PromoCodeDto;
 import com.selim.shared.product.converter.PromoCodeConverter;
 import com.selim.shared.product.request.CreatePromoCodeRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class PromoCodeService {
 
@@ -25,7 +27,7 @@ public class PromoCodeService {
 
     @CachePut(value = "promoCodes", key = "#request")
     public PromoCodeDto save(CreatePromoCodeRequest request) {
-        User fromDbUser = userServiceClient.getUserByMail(request.getUserMail()).getBody();
+        User fromDbUser = userServiceClient.getByMail(request.getUserMail()).getBody();
         PromoCode promoCode = new PromoCode(
                 request.getCode(),
                 request.getAmount(),

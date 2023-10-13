@@ -24,7 +24,7 @@ public class CartService {
 
     @CachePut(value = "carts", key = "#productId")
     public CartDto save(String mail, String productId) {
-        var fromDbUser = userServiceClient.getUserByMail(mail).getBody();
+        var fromDbUser = userServiceClient.getByMail(mail).getBody();
         var fromProduct = productService.getProductObjectByProductId(productId);
         List<Product> products = List.of(fromProduct);
 

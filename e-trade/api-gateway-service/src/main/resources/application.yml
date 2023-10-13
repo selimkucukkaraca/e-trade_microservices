@@ -11,19 +11,19 @@ spring:
           lower-case-service-id: true
       routes:
         - id: userModule
-          uri: lb://user-service
+          uri: lb://USER-SERVICE
           predicates:
-            - Path=/api/v1/**
+            - Path=/api/user-service/**
 
         - id: productModule
-          uri: lb://product-service
+          uri: lb://PRODUCT-SERVICE
           predicates:
-            - Path=/api/v1/**
+            - Path=/api/product-service/**
 
         - id: categoryModule
-          uri: lb://category-service
+          uri: lb://CATEGORY-SERVICE
           predicates:
-            - Path=/api/v1/**
+            - Path=/api/category-service/**
 eureka:
   instance:
     prefer-ip-address: true

@@ -25,7 +25,7 @@ public class BuyProductService {
     public void buy(ConfirmCartRequest confirmCartRequest) {
         var cart = cartService.getCart(confirmCartRequest.getCartId());
         var bankAccount = bankAccountService.getByCardNumber(confirmCartRequest.getCardNumber());
-        User fromDbUser = userServiceClient.getUserByMail(confirmCartRequest.getUserMail()).getBody();
+        User fromDbUser = userServiceClient.getByMail(confirmCartRequest.getUserMail()).getBody();
         PromoCode code = promoCodeService.getByCodeText(confirmCartRequest.getCodeText().get());
         double productTotalPrice;
 

@@ -14,10 +14,12 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/v1/**
+
         - id: productModule
           uri: lb://product-service
           predicates:
             - Path=/api/v1/**
+
         - id: categoryModule
           uri: lb://category-service
           predicates:

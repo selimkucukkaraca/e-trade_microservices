@@ -23,8 +23,8 @@ public class CategoryListController {
 
     }
 
-    @GetMapping("/categoryName")
-    public ResponseEntity<Category> getByCategoryName(@RequestBody String categoryName) {
+    @GetMapping("/categoryName/{categoryName}")
+    public ResponseEntity<Category> getByCategoryName(@PathVariable String categoryName) {
         return ResponseEntity
                 .ok(categoryListService.getByCategoryName(categoryName));
 

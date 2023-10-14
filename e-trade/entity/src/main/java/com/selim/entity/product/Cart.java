@@ -30,4 +30,11 @@ public class Cart extends BaseEntity {
         this.product = product;
         this.user = user;
     }
+
+    public Cart(Long id,List<Product> product, User user, String cartId) {
+        super.setId(id);
+        this.product = product;
+        this.user = user;
+        this.cartId = cartId;
+    }
 }

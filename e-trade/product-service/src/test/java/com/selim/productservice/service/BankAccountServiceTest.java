@@ -21,7 +21,7 @@ class BankAccountServiceTest extends TestUtil {
     }
 
     @Test
-    public void saveBankAccount_itShouldReturnBankAccount() {
+    void saveBankAccount_itShouldReturnBankAccount() {
 
         BankAccount bankAccount = getBankAccountList().get(0);
 
@@ -34,7 +34,7 @@ class BankAccountServiceTest extends TestUtil {
     }
 
     @Test
-    public void getByCardNumber_itShouldReturnBankAccount() {
+    void getByCardNumber_itShouldReturnBankAccount() {
 
         BankAccount bankAccount = getBankAccountList().get(0);
         String cardNumber = "test";
@@ -46,5 +46,11 @@ class BankAccountServiceTest extends TestUtil {
         verify(bankAccountRepository).findByCardNumber(cardNumber);
 
     }
+
+    @Test
+    void validateCreditCard(){
+        //TODO
+    }
+
 
 }

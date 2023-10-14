@@ -29,7 +29,7 @@ class BrandServiceTest extends TestUtil {
     }
 
     @Test
-    public void saveBrand_itShouldReturnBrandDto() {
+    void saveBrand_itShouldReturnBrandDto() {
 
         CreateBrandRequest request = getCreateBrandRequest();
         Brand brand = getBrandList().get(0);
@@ -50,7 +50,7 @@ class BrandServiceTest extends TestUtil {
     }
 
     @Test
-    public void delete() {
+    void delete() {
 
         Brand brand = getBrandList().get(0);
         String brandId = "test";
@@ -65,7 +65,7 @@ class BrandServiceTest extends TestUtil {
     }
 
     @Test
-    public void getBrandByBrandId_itShouldReturnBrand() {
+    void getBrandByBrandId_itShouldReturnBrand() {
 
         Brand brand = getBrandList().get(0);
         String brandId = "test";
@@ -80,7 +80,7 @@ class BrandServiceTest extends TestUtil {
     }
 
     @Test
-    public void getBrandByBrand_itShouldReturnBrand() {
+    void getBrandByBrand_itShouldReturnBrand() {
 
         Brand brand = getBrandList().get(0);
 

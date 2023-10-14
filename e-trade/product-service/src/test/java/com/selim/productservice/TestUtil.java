@@ -1,9 +1,12 @@
 package com.selim.productservice;
 
 import com.selim.entity.product.*;
+import com.selim.entity.user.User;
 import com.selim.shared.product.BrandDto;
+import com.selim.shared.product.CartDto;
 import com.selim.shared.product.ProductCommentDto;
 import com.selim.shared.product.ProductDto;
+import com.selim.shared.product.request.ConfirmCartRequest;
 import com.selim.shared.product.request.CreateBrandRequest;
 import com.selim.shared.product.request.CreateProductCommentRequest;
 import com.selim.shared.product.request.CreateProductRequest;
@@ -56,6 +59,14 @@ public abstract class TestUtil {
 
     public List<Product> getProductList() {
         return List.of(new Product(1L, "test", "test", 1L, 0, "test", null, null, "test", null));
+    }
+
+    public List<CartDto> getCartDtoList() {
+        return List.of(new CartDto(null, null, "test"));
+    }
+
+    public List<Cart> getCartList(Product product, User user) {
+        return List.of(new Cart(1L, null, null, "test"));
     }
 
 }

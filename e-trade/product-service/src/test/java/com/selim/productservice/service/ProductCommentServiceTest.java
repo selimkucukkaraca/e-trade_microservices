@@ -39,7 +39,7 @@ class ProductCommentServiceTest extends TestUtil {
     }
 
     @Test
-    public void saveProductComment_itShouldReturnProductCommentDto() {
+    void saveProductComment_itShouldReturnProductCommentDto() {
 
         CreateProductCommentRequest createProductCommentRequest = getCreateProductCommentRequest();
         Product product = getProductList().get(0);
@@ -51,7 +51,7 @@ class ProductCommentServiceTest extends TestUtil {
         when(productCommentRepository.save(productComment)).thenReturn(productComment);
         when(productCommentConverter.convertToDto(productComment)).thenReturn(productCommentDto);
 
-        ProductCommentDto response = productCommentService.save(createProductCommentRequest);
+        ProductCommentDto response = productCommentService.save(createProductCommentRequest); //TODO
 
         assertEquals(response, productCommentDto);
         verify(productCommentConverter).toEntity(createProductCommentRequest,product,user);
@@ -61,7 +61,7 @@ class ProductCommentServiceTest extends TestUtil {
     }
 
     @Test
-    public void delete() {
+    void delete() {
 
         ProductComment productComment = getProductCommentList().get(0);
         String productCommentId = "test";
@@ -76,7 +76,7 @@ class ProductCommentServiceTest extends TestUtil {
     }
 
     @Test
-    public void getProductCommentByProductCommentId_itShouldReturnProductComment() {
+    void getProductCommentByProductCommentId_itShouldReturnProductComment() {
 
         ProductComment productComment = getProductCommentList().get(0);
         String productCommentId = "test";
@@ -91,7 +91,7 @@ class ProductCommentServiceTest extends TestUtil {
     }
 
     @Test
-    public void getByProductCommentId_itShouldReturnProductCommentDto() {
+    void getByProductCommentId_itShouldReturnProductCommentDto() {
 
         ProductComment productComment = getProductCommentList().get(0);
         ProductCommentDto productCommentDto = getProductCommentDtoList().get(0);

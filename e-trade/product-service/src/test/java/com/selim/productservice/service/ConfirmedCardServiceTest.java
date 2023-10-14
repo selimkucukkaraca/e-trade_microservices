@@ -24,7 +24,7 @@ class ConfirmedCardServiceTest extends TestUtil {
     }
 
     @Test
-    public void saveConfirmedCart_itShouldReturnConfirmedCart() {
+    void saveConfirmedCart_itShouldReturnConfirmedCart() {
 
         ConfirmedCart confirmedCart = getConfirmedCartList().get(0);
 
@@ -35,6 +35,16 @@ class ConfirmedCardServiceTest extends TestUtil {
         assertEquals(confirmedCart, response);
         verify(confirmedCartRepository).save(confirmedCart);
 
+    }
+
+    @Test
+    void getAll_itShouldReturnConfirmedCartDto(){
+        //TODO
+    }
+
+    @Test
+    void toDto_itShouldReturnConfirmedCartDto(){
+        //TODO
     }
 
 }

@@ -54,7 +54,7 @@ class AddressServiceTest extends TestUtil {
         String addressId = "test";
         Address address = getAddressList().get(0);
 
-        when(addressRepository.getAddressByAddressId(addressId)).thenReturn(Optional.ofNullable(address));
+        when(addressRepository.getByAddressId(addressId)).thenReturn(Optional.ofNullable(address));
 
         addressService.delete(addressId);
 
@@ -67,14 +67,14 @@ class AddressServiceTest extends TestUtil {
         AddressDto addressDto = getAddressDtoList().get(0);
         String addressId = "test";
 
-        when(addressRepository.findAddressByAddressId(addressId)).thenReturn(Optional.ofNullable(address));
+        when(addressRepository.findByAddressId(addressId)).thenReturn(Optional.ofNullable(address));
         assert address != null;
         when(addressConverter.convertToDto(address)).thenReturn(addressDto);
 
         AddressDto response = addressService.getAddressByAddressId(addressId);
 
         assertEquals(response, addressDto);
-        verify(addressRepository).findAddressByAddressId(addressId);
+        verify(addressRepository).findByAddressId(addressId);
         verify(addressConverter).convertToDto(address);
 
     }
@@ -85,12 +85,12 @@ class AddressServiceTest extends TestUtil {
         Address address = getAddressList().get(0);
         String addressId = "test";
 
-        when(addressRepository.getAddressByAddressId(addressId)).thenReturn(Optional.ofNullable(address));
+        when(addressRepository.getByAddressId(addressId)).thenReturn(Optional.ofNullable(address));
 
         Address response = addressService.getAddress(addressId);
 
         assertEquals(response, address);
-        verify(addressRepository).getAddressByAddressId(addressId);
+        verify(addressRepository).getByAddressId(addressId);
 
     }
 }

@@ -62,14 +62,14 @@ class SellerServiceTest extends TestUtil {
         SellerDto sellerDto = getSellerDtoList().get(0);
         String mail = "test";
 
-        when(sellerRepository.findSellerByMail(mail)).thenReturn(Optional.ofNullable(seller));
+        when(sellerRepository.findByMail(mail)).thenReturn(Optional.ofNullable(seller));
         assert seller != null;
         when(sellerConverter.convertToDto(seller)).thenReturn(sellerDto);
 
         SellerDto response = sellerService.getByMail(mail);
 
         assertEquals(response, sellerDto);
-        verify(sellerRepository).findSellerByMail(mail);
+        verify(sellerRepository).findByMail(mail);
         verify(sellerConverter).convertToDto(seller);
 
     }
@@ -80,12 +80,12 @@ class SellerServiceTest extends TestUtil {
         Seller seller = getSellerList().get(0);
         String mail = "test";
 
-        when(sellerRepository.findSellerByMail(mail)).thenReturn(Optional.ofNullable(seller));
+        when(sellerRepository.findByMail(mail)).thenReturn(Optional.ofNullable(seller));
 
         Seller response = sellerService.getSellerByMail(mail);
 
         assertEquals(response, seller);
-        verify(sellerRepository).findSellerByMail(mail);
+        verify(sellerRepository).findByMail(mail);
 
     }
 
@@ -95,7 +95,7 @@ class SellerServiceTest extends TestUtil {
         Seller seller = getSellerList().get(0);
         String mail = "test";
 
-        when(sellerRepository.findSellerByMail(mail)).thenReturn(Optional.ofNullable(seller));
+        when(sellerRepository.findByMail(mail)).thenReturn(Optional.ofNullable(seller));
 
         sellerService.delete(mail);
 
@@ -112,14 +112,14 @@ class SellerServiceTest extends TestUtil {
 
         when(sellerRepository.save(seller)).thenReturn(seller);
         when(sellerConverter.convertToDto(seller)).thenReturn(sellerDto);
-        when(sellerRepository.findSellerByMail("test")).thenReturn(Optional.of(seller));
+        when(sellerRepository.findByMail("test")).thenReturn(Optional.of(seller));
 
         SellerDto response = sellerService.deActivateSeller("test");
 
         assertEquals(sellerDto,response);
         verify(sellerRepository).save(seller);
         verify(sellerConverter).convertToDto(seller);
-        verify(sellerRepository).findSellerByMail("test");
+        verify(sellerRepository).findByMail("test");
 
     }
 

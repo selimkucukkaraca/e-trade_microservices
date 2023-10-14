@@ -41,7 +41,7 @@ class UserServiceTest extends TestUtil {
         UserDto userDto = getUserDtoList().get(0);
 
         when(userConverter.toEntity(request)).thenReturn(user);
-        when(userRepository.existsUserByMail("test")).thenReturn(false);
+        when(userRepository.existsByMail("test")).thenReturn(false);
         when(userRepository.save(user)).thenReturn(user);
         when(userConverter.convertToDto(user)).thenReturn(userDto);
 
@@ -49,7 +49,7 @@ class UserServiceTest extends TestUtil {
 
         assertEquals(response, userDto);
         verify(userConverter).toEntity(request);
-        verify(userRepository).existsUserByMail("test");
+        verify(userRepository).existsByMail("test");
         verify(userRepository).save(user);
         verify(userConverter).convertToDto(user);
 
@@ -61,7 +61,7 @@ class UserServiceTest extends TestUtil {
         User user = getUserList().get(0);
         String mail = "test";
 
-        when(userRepository.findUserByMail(mail)).thenReturn(Optional.ofNullable(user));
+        when(userRepository.findByMail(mail)).thenReturn(Optional.ofNullable(user));
 
         userService.delete(mail);
 
@@ -77,14 +77,14 @@ class UserServiceTest extends TestUtil {
         UserDto userDto = getUserDtoList().get(0);
         String mail = "test";
 
-        when(userRepository.findUserByMail(mail)).thenReturn(Optional.ofNullable(user));
+        when(userRepository.findByMail(mail)).thenReturn(Optional.ofNullable(user));
         assert user != null;
         when(userConverter.convertToDto(user)).thenReturn(userDto);
 
         UserDto response = userService.getByMail(mail);
 
         assertEquals(response, userDto);
-        verify(userRepository).findUserByMail(mail);
+        verify(userRepository).findByMail(mail);
         verify(userConverter).convertToDto(user);
 
     }
@@ -95,12 +95,12 @@ class UserServiceTest extends TestUtil {
         User user = getUserList().get(0);
         String mail = "test";
 
-        when(userRepository.findUserByMail(mail)).thenReturn(Optional.ofNullable(user));
+        when(userRepository.findByMail(mail)).thenReturn(Optional.ofNullable(user));
 
         User response = userService.getUserByMail(mail);
 
         assertEquals(response, user);
-        verify(userRepository).findUserByMail(mail);
+        verify(userRepository).findByMail(mail);
 
     }
 
@@ -111,14 +111,14 @@ class UserServiceTest extends TestUtil {
 
         when(userRepository.save(user)).thenReturn(user);
         when(userConverter.convertToDto(user)).thenReturn(userDto);
-        when(userRepository.findUserByMail("test")).thenReturn(Optional.of(user));
+        when(userRepository.findByMail("test")).thenReturn(Optional.of(user));
 
         UserDto response = userService.deActivateUser("test");
 
         assertEquals(userDto, response);
         verify(userRepository).save(user);
         verify(userConverter).convertToDto(user);
-        verify(userRepository).findUserByMail("test");
+        verify(userRepository).findByMail("test");
 
     }
 

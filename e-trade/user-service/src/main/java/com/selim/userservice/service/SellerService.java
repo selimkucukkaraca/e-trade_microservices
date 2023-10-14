@@ -44,12 +44,12 @@ public class SellerService {
 
     @Cacheable(value = "sellers", key = "#mail")
     public Seller getSellerByMail(String mail) {
-        return sellerRepository.findSellerByMail(mail)
+        return sellerRepository.findByMail(mail)
                 .orElseThrow(() -> new GenericExistException("Mail not found: " + mail));
     }
 
     public SellerDto getByMail(String mail) {
-        var fromDbSeller = sellerRepository.findSellerByMail(mail)
+        var fromDbSeller = sellerRepository.findByMail(mail)
                 .orElseThrow(() -> new GenericExistException("Mail not found: " + mail));
         return sellerConverter.convertToDto(fromDbSeller);
     }

@@ -29,7 +29,7 @@ public class UserService {
     @CachePut(value = "users", key = "#request")
     public UserDto save(CreateUserRequest request) {
         var saved = userConverter.toEntity(request);
-        if (userRepository.existsUserByMail(saved.getMail())) {
+        if (userRepository.existsByMail(saved.getMail())) {
             throw new GenericExistException("User already exist, mail: " + saved.getMail());
         }
         userRepository.save(saved);
@@ -44,13 +44,13 @@ public class UserService {
 
     @Cacheable(value = "users", key = "#mail")
     public User getUserByMail(String mail) {
-        return userRepository.findUserByMail(mail)
+        return userRepository.findByMail(mail)
                 .orElseThrow(() -> new GenericExistException("Mail not found: " + mail));
     }
 
     @Cacheable(value = "users", key = "#mail")
     public UserDto getByMail(String mail) {
-        var fromDbUser = userRepository.findUserByMail(mail)
+        var fromDbUser = userRepository.findByMail(mail)
                 .orElseThrow(() -> new GenericExistException("Mail not found: " + mail));
         return userConverter.convertToDto(fromDbUser);
     }

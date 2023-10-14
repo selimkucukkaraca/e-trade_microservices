@@ -37,7 +37,7 @@ public class AddressService {
 
     @Cacheable(value = "addresses", key = "#addressId")
     public AddressDto getAddressByAddressId(String addressId) {
-        var address = addressRepository.findAddressByAddressId(addressId)
+        var address = addressRepository.findByAddressId(addressId)
                 .orElseThrow(() -> new GenericExistException("Address not found: " + addressId));
         return addressConverter.convertToDto(address);
     }
@@ -53,7 +53,7 @@ public class AddressService {
 
     @Cacheable(value = "addresses", key = "#addressId")
     public Address getAddress(String addressId) {
-        return addressRepository.getAddressByAddressId(addressId)
+        return addressRepository.getByAddressId(addressId)
                 .orElseThrow(() -> new GenericExistException("Address not found: " + addressId));
     }
 }

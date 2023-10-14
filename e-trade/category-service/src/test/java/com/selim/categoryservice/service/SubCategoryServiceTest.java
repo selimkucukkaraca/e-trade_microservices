@@ -9,6 +9,7 @@ import com.selim.shared.category.converter.SubCategoryConverter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 class SubCategoryServiceTest extends TestUtil {
@@ -31,11 +32,12 @@ class SubCategoryServiceTest extends TestUtil {
     }
 
     @Test
-    public void saveSubCategory_itShouldReturnSubCategoryDto() {
+    void saveSubCategory_itShouldReturnSubCategoryDto() {
+        //TODO
     }
 
     @Test
-    public void delete() {
+    void delete() {
 
         SubCategory subCategory = getSubCategoryList().get(0);
         String subCategoryName = "test";
@@ -46,5 +48,18 @@ class SubCategoryServiceTest extends TestUtil {
 
         verify(subCategoryRepository).delete(subCategory);
 
+    }
+
+    @Test
+    void getBySubCategoryName_itShouldReturnSubCategory(){
+
+        SubCategory subCategory = getSubCategoryList().get(0);
+        String subCategoryName = "test";
+
+        when(subCategoryRepository.findBySubCategoryName(subCategoryName)).thenReturn(subCategory);
+
+        SubCategory response = subCategoryService.getBySubCategoryName(subCategoryName);
+        assertEquals(response,subCategory);
+        verify(subCategoryRepository).findBySubCategoryName(subCategoryName);
     }
 }

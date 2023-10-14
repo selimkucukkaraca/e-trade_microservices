@@ -28,7 +28,7 @@ class CategoryListServiceTest extends TestUtil {
     }
 
     @Test
-    public void getCategoryByCategoryName_itShouldReturnCategoryDto() {
+    void getCategoryByCategoryName_itShouldReturnCategoryDto() {
 
         CategoryDto categoryDto = getCategoryDtoList().get(0);
         Category category = getCategoryList().get(0);
@@ -46,7 +46,7 @@ class CategoryListServiceTest extends TestUtil {
     }
 
     @Test
-    public void getByCategoryName_itShouldReturnCategory(){
+    void getByCategoryName_itShouldReturnCategory(){
         Category category = getCategoryList().get(0);
         String categoryName = "test";
 

@@ -9,6 +9,7 @@ import com.selim.shared.category.request.CreateCategoryRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -29,7 +30,7 @@ class CategoryServiceTest extends TestUtil {
     }
 
     @Test
-    public void saveCategory_itShouldReturnCategoryDto() {
+    void saveCategory_itShouldReturnCategoryDto() {
 
         CreateCategoryRequest request = getCreateCategoryRequest();
         Category category = getCategoryList().get(0);
@@ -52,7 +53,7 @@ class CategoryServiceTest extends TestUtil {
     }
 
     @Test
-    public void getByCategoryName_itShouldReturnCategory() {
+    void getByCategoryName_itShouldReturnCategory() {
 
         Category category = getCategoryList().get(0);
         String categoryName = "test";
@@ -67,7 +68,7 @@ class CategoryServiceTest extends TestUtil {
     }
 
     @Test
-    public void delete() {
+    void delete() {
 
         Category category = getCategoryList().get(0);
         String categoryName = "Test";
@@ -76,12 +77,12 @@ class CategoryServiceTest extends TestUtil {
 
         categoryService.deleteCategory(categoryName);
 
-        verify(categoryRepository).delete(category);
+        verify(categoryRepository).delete(Objects.requireNonNull(category));
 
     }
 
     @Test
-    public void updateCategory() {
+    void updateCategory() {
 
         Category category = getCategoryList().get(0);
 

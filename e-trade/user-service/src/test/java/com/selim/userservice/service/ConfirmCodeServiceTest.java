@@ -21,7 +21,7 @@ class ConfirmCodeServiceTest extends TestUtil {
     }
 
     @Test
-    public void saveConfirmCode() {
+    void saveConfirmCode() {
 
         ConfirmCode confirmCode = getConfirmCodeList().get(0);
 
@@ -35,7 +35,7 @@ class ConfirmCodeServiceTest extends TestUtil {
     }
 
     @Test
-    public void deleteConfirmCode() {
+    void deleteConfirmCode() {
 
         ConfirmCode confirmCode = getConfirmCodeList().get(0);
 
@@ -43,5 +43,10 @@ class ConfirmCodeServiceTest extends TestUtil {
 
         verify(confirmCodeRepository).delete(confirmCode);
 
+    }
+
+    @Test
+    void deleteById(){
+        //TODO
     }
 }

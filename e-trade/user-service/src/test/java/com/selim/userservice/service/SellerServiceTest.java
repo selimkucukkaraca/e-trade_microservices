@@ -34,7 +34,7 @@ class SellerServiceTest extends TestUtil {
     }
 
     @Test
-    public void saveSeller_itShouldReturnSellerDto() {
+    void saveSeller_itShouldReturnSellerDto() {
 
         CreateSellerRequest request = getCreateSellerRequest();
         Seller seller = getSellerList().get(0);
@@ -56,7 +56,7 @@ class SellerServiceTest extends TestUtil {
     }
 
     @Test
-    public void getByMail_itShouldReturnSellerDto() {
+    void getByMail_itShouldReturnSellerDto() {
 
         Seller seller = getSellerList().get(0);
         SellerDto sellerDto = getSellerDtoList().get(0);
@@ -75,7 +75,7 @@ class SellerServiceTest extends TestUtil {
     }
 
     @Test
-    public void getSellerByMail_itShouldReturnSeller() {
+    void getSellerByMail_itShouldReturnSeller() {
 
         Seller seller = getSellerList().get(0);
         String mail = "test";
@@ -90,7 +90,7 @@ class SellerServiceTest extends TestUtil {
     }
 
     @Test
-    public void delete() {
+    void delete() {
 
         Seller seller = getSellerList().get(0);
         String mail = "test";
@@ -105,7 +105,7 @@ class SellerServiceTest extends TestUtil {
     }
 
     @Test
-    public void deActivateSeller_itShouldReturnSellerDto(){
+    void deActivateSeller_itShouldReturnSellerDto(){
 
         Seller seller = getSellerList().get(0);
         SellerDto sellerDto = getSellerDtoList().get(0);
@@ -124,11 +124,13 @@ class SellerServiceTest extends TestUtil {
     }
 
     @Test
-    public void sendConfirmCode() {
+    void sendConfirmCode() {
+        //TODO
     }
 
     @Test
-    public void activeSeller_itShouldReturnSellerDto() {
+    void activeSeller_itShouldReturnSellerDto() {
+        //TODO
     }
 
 }

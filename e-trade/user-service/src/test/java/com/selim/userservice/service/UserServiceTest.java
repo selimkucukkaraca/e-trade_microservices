@@ -34,7 +34,7 @@ class UserServiceTest extends TestUtil {
     }
 
     @Test
-    public void saveUser_itShouldReturnUserDto() {
+    void saveUser_itShouldReturnUserDto() {
 
         CreateUserRequest request = getCreateUserRequest();
         User user = getUserList().get(0);
@@ -56,7 +56,7 @@ class UserServiceTest extends TestUtil {
     }
 
     @Test
-    public void delete() {
+    void delete() {
 
         User user = getUserList().get(0);
         String mail = "test";
@@ -71,7 +71,7 @@ class UserServiceTest extends TestUtil {
     }
 
     @Test
-    public void getByMail_itShouldReturnUserDto() {
+    void getByMail_itShouldReturnUserDto() {
 
         User user = getUserList().get(0);
         UserDto userDto = getUserDtoList().get(0);
@@ -90,7 +90,7 @@ class UserServiceTest extends TestUtil {
     }
 
     @Test
-    public void getUserByMail_itShouldReturnUser() {
+    void getUserByMail_itShouldReturnUser() {
 
         User user = getUserList().get(0);
         String mail = "test";
@@ -105,7 +105,7 @@ class UserServiceTest extends TestUtil {
     }
 
     @Test
-    public void deActiveUser_itShouldReturnUserDto() {
+    void deActiveUser_itShouldReturnUserDto() {
         User user = getUserList().get(0);
         UserDto userDto = getUserDtoList().get(0);
 
@@ -120,6 +120,16 @@ class UserServiceTest extends TestUtil {
         verify(userConverter).convertToDto(user);
         verify(userRepository).findByMail("test");
 
+    }
+
+    @Test
+    void activeUser_itShouldReturnUserDto(){
+        //TODO
+    }
+
+    @Test
+    void sendConfirmCode(){
+        //TODO
     }
 
 }

@@ -3,11 +3,9 @@ package com.selim.userservice.service;
 import com.selim.entity.user.Address;
 import com.selim.shared.user.AddressDto;
 import com.selim.shared.user.converter.AddressConverter;
-import com.selim.shared.user.converter.SellerCommentConverter;
 import com.selim.shared.user.request.CreateAddressRequest;
 import com.selim.userservice.TestUtil;
 import com.selim.userservice.repository.AddressRepository;
-import com.selim.userservice.repository.SellerCommentRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +31,7 @@ class AddressServiceTest extends TestUtil {
     }
 
     @Test
-    public void saveAddress_itShouldReturnAddressDto() {
+    void saveAddress_itShouldReturnAddressDto() {
 
         CreateAddressRequest request = getCreateAddressRequest();
         Address address = getAddressList().get(0);
@@ -49,7 +47,7 @@ class AddressServiceTest extends TestUtil {
     }
 
     @Test
-    public void delete() {
+    void delete() {
 
         String addressId = "test";
         Address address = getAddressList().get(0);
@@ -61,7 +59,7 @@ class AddressServiceTest extends TestUtil {
     }
 
     @Test
-    public void getAddressByAddressId_itShouldReturnAddressDto() {
+    void getAddressByAddressId_itShouldReturnAddressDto() {
 
         Address address = getAddressList().get(0);
         AddressDto addressDto = getAddressDtoList().get(0);
@@ -80,7 +78,7 @@ class AddressServiceTest extends TestUtil {
     }
 
     @Test
-    public void getAddress_itShouldReturnAddress() {
+    void getAddress_itShouldReturnAddress() {
 
         Address address = getAddressList().get(0);
         String addressId = "test";
@@ -92,5 +90,10 @@ class AddressServiceTest extends TestUtil {
         assertEquals(response, address);
         verify(addressRepository).getByAddressId(addressId);
 
+    }
+
+    @Test
+    void getAddressListByUserMail_itShouldReturnAddressDto(){
+       //TODO
     }
 }

@@ -36,7 +36,7 @@ class SellerCommentServiceTest extends TestUtil {
     }
 
     @Test
-    public void saveSellerComment_itShouldReturnSellerCommentDto() {
+    void saveSellerComment_itShouldReturnSellerCommentDto() {
 
         CreateSellerCommentRequest request = getCreateSellerCommentRequest();
         Seller fromDbSeller = getSellerList().get(0);
@@ -49,7 +49,7 @@ class SellerCommentServiceTest extends TestUtil {
         when(sellerCommentConverter.convertToDto(sellerComment)).thenReturn(sellerCommentDto);
 
         SellerCommentDto response = sellerCommentService.save(request);
-
+        //TODO
         assertEquals(response, sellerCommentDto);
 
         verify(sellerCommentConverter).toEntity(request,fromDbSeller,froMDbUser);
@@ -59,7 +59,7 @@ class SellerCommentServiceTest extends TestUtil {
     }
 
     @Test
-    public void delete() {
+    void delete() {
 
         SellerComment sellerComment = getSellerCommentList().get(0);
         String sellerCommentId = "test";
@@ -73,7 +73,7 @@ class SellerCommentServiceTest extends TestUtil {
     }
 
     @Test
-    public void getSellerBySellerCommentId_itShouldReturnSellerCommentDto() {
+    void getSellerBySellerCommentId_itShouldReturnSellerCommentDto() {
 
         SellerComment sellerComment = getSellerCommentList().get(0);
         SellerCommentDto sellerCommentDto = getSellerCommentDtoList().get(0);

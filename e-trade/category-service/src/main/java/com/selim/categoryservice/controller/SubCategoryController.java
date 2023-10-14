@@ -22,7 +22,7 @@ public class SubCategoryController {
     }
 
     @DeleteMapping
-    public ResponseEntity<?> delete(@RequestParam String subCategoryName) {
+    public ResponseEntity<Void> delete(@RequestParam String subCategoryName) {
         subCategoryService.delete(subCategoryName);
         return ResponseEntity
                 .noContent()

@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping("/send-confirm-code")
-    public ResponseEntity<?> sendConfirmCode(@RequestParam String mail) {
+    public ResponseEntity<Void> sendConfirmCode(@RequestParam String mail) {
         userService.sendConfirmCode(mail);
         return ResponseEntity
                 .noContent()

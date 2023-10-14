@@ -34,13 +34,4 @@ public class SellerComment extends BaseEntity {
         this.sellerCommentId = sellerCommentId;
     }
 
-    public SellerComment(String title, String body, int star,
-                         Seller seller, User user) {
-        this.title = title;
-        this.body = body;
-        this.star = star;
-        this.seller = seller;
-        this.user = user;
-
-    }
 }

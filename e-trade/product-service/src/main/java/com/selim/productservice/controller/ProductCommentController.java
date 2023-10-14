@@ -27,7 +27,7 @@ public class ProductCommentController {
     }
 
     @DeleteMapping
-    public ResponseEntity<?> delete(@RequestParam String productCommentId) {
+    public ResponseEntity<Void> delete(@RequestParam String productCommentId) {
         productCommentService.delete(productCommentId);
         return ResponseEntity
                 .noContent()

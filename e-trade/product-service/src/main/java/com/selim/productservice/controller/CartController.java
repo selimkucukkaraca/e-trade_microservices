@@ -23,7 +23,7 @@ public class CartController {
     }
 
     @DeleteMapping
-    public ResponseEntity<?> deleteByCartId(@RequestParam String cartId) {
+    public ResponseEntity<Void> deleteByCartId(@RequestParam String cartId) {
         cartService.deleteByCartId(cartId);
         return ResponseEntity
                 .noContent()

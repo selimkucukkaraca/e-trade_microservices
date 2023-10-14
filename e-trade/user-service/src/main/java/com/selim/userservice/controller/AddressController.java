@@ -27,7 +27,7 @@ public class AddressController {
     }
 
     @DeleteMapping
-    public ResponseEntity<?> delete(@RequestParam String addressId) {
+    public ResponseEntity<Void> delete(@RequestParam String addressId) {
         addressService.delete(addressId);
         return ResponseEntity
                 .noContent()

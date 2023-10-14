@@ -1,6 +1,5 @@
 package com.selim.productservice.client;
 
-import com.selim.entity.product.Product;
 import com.selim.entity.user.Address;
 import com.selim.entity.user.User;
 import com.selim.shared.user.request.CreateAddressRequest;
@@ -14,9 +13,7 @@ public interface UserServiceClient {
     @GetMapping("/{mail}")
     ResponseEntity<User> getByMail(@PathVariable String mail);
 
-    //TODO: fail
-    @PostMapping ResponseEntity<Address> save(@RequestBody CreateAddressRequest request);
+    @PostMapping
+    ResponseEntity<Address> save(@RequestBody CreateAddressRequest request);
 
-    @GetMapping("/productId")
-    ResponseEntity<Product> getProductByProductId(@RequestBody String productId);
 }

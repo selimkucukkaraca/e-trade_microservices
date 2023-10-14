@@ -24,7 +24,7 @@ public class SellerController {
     }
 
     @DeleteMapping
-    public ResponseEntity<?> delete(@RequestParam String mail) {
+    public ResponseEntity<Void> delete(@RequestParam String mail) {
         sellerService.delete(mail);
         return ResponseEntity
                 .noContent()
@@ -32,7 +32,7 @@ public class SellerController {
     }
 
     @PostMapping("/send-confirm-code")
-    public ResponseEntity<?> sendConfirmCode(@RequestParam String mail) {
+    public ResponseEntity<Void> sendConfirmCode(@RequestParam String mail) {
         sellerService.sendConfirmCode(mail);
         return ResponseEntity
                 .noContent()

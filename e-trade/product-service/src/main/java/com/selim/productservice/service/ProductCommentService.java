@@ -19,11 +19,12 @@ public class ProductCommentService {
 
     private final ProductCommentRepository productCommentRepository;
     private final ProductCommentConverter productCommentConverter;
+    private final ProductService productService;
     private final UserServiceClient userServiceClient;
 
     @CachePut(value = "productComments", key = "#request")
     public ProductCommentDto save(CreateProductCommentRequest request) {
-        var fromDbUser = userServiceClient.getProductByProductId(request.getProductId()).getBody();
+        var fromDbUser = productService.getProductByProductId(request.getProductId());
         var fromDbProduct = userServiceClient.getByMail(request.getUserMail()).getBody();
         var saved = productCommentConverter.toEntity(request,fromDbUser,fromDbProduct);
         if (request.getStar() < 0) {

@@ -25,7 +25,7 @@ public class PromoCodeController {
     }
 
     @DeleteMapping
-    public ResponseEntity<?> delete(@RequestParam String publicId){
+    public ResponseEntity<Void> delete(@RequestParam String publicId){
         promoCodeService.delete(publicId);
         return ResponseEntity
                 .noContent()

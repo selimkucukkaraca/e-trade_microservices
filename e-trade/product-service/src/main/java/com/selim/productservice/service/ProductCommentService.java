@@ -37,7 +37,7 @@ public class ProductCommentService {
     @Cacheable(value = "productComments", key = "#productCommentId")
     public ProductCommentDto getByProductCommentId(String productCommentId) {
         var productComment = productCommentRepository
-                .findProductCommentByProductCommentId(productCommentId)
+                .findByProductCommentId(productCommentId)
                 .orElseThrow(() -> new GenericExistException("Product comment not found: " + productCommentId));
         return productCommentConverter.convertToDto(productComment);
     }
@@ -50,7 +50,7 @@ public class ProductCommentService {
 
     @Cacheable(value = "productComments", key = "#productCommentId")
     public ProductComment getProductCommentByProductCommentId(String productCommentId) {
-        return productCommentRepository.findProductCommentByProductCommentId(productCommentId)
+        return productCommentRepository.findByProductCommentId(productCommentId)
                 .orElseThrow(() -> new GenericExistException("Product comment not found: " + productCommentId));
     }
 

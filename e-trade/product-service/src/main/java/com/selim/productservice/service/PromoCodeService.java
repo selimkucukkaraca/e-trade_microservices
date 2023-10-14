@@ -45,7 +45,7 @@ public class PromoCodeService {
 
     @Cacheable(value = "promoCodes", key = "#publicId")
     public PromoCode getByPublicId(String publicId) {
-        return promoCodeRepository.findPromoCodeByPublicId(publicId)
+        return promoCodeRepository.findByPublicId(publicId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "promo code not found: " + publicId));
     }
 
@@ -57,7 +57,7 @@ public class PromoCodeService {
 
     @Cacheable(value = "promoCodes", key = "#codeText")
     public PromoCode getByCodeText(String codeText) {
-        return promoCodeRepository.findPromoCodeByCodeText(codeText)
+        return promoCodeRepository.findByCodeText(codeText)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "promo code not found"));
     }
 

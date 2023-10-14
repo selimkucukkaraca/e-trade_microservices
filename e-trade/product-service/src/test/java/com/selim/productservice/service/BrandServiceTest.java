@@ -55,7 +55,7 @@ class BrandServiceTest extends TestUtil {
         Brand brand = getBrandList().get(0);
         String brandId = "test";
 
-        when(brandRepository.findBrandByBrandId(brandId)).thenReturn(Optional.ofNullable(brand));
+        when(brandRepository.findByBrandId(brandId)).thenReturn(Optional.ofNullable(brand));
 
         brandService.deleteBrandByBrandId(brandId);
 
@@ -70,12 +70,12 @@ class BrandServiceTest extends TestUtil {
         Brand brand = getBrandList().get(0);
         String brandId = "test";
 
-        when(brandRepository.findBrandByBrandId(brandId)).thenReturn(Optional.ofNullable(brand));
+        when(brandRepository.findByBrandId(brandId)).thenReturn(Optional.ofNullable(brand));
 
         Brand response = brandService.getBrandByBrandId(brandId);
 
         assertEquals(response, brand);
-        verify(brandRepository).findBrandByBrandId(brandId);
+        verify(brandRepository).findByBrandId(brandId);
 
     }
 
@@ -84,12 +84,12 @@ class BrandServiceTest extends TestUtil {
 
         Brand brand = getBrandList().get(0);
 
-        when(brandRepository.findBrandByBrand("test")).thenReturn(brand);
+        when(brandRepository.findByBrand("test")).thenReturn(brand);
 
         Brand response = brandService.getBrandByBrand("test");
 
         assertEquals(response, brand);
-        verify(brandRepository).findBrandByBrand("test");
+        verify(brandRepository).findByBrand("test");
 
     }
 }

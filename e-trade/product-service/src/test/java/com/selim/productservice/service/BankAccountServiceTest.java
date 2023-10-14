@@ -39,11 +39,11 @@ class BankAccountServiceTest extends TestUtil {
         BankAccount bankAccount = getBankAccountList().get(0);
         String cardNumber = "test";
 
-        when(bankAccountRepository.findBankAccountByCardNumber(cardNumber)).thenReturn(bankAccount);
+        when(bankAccountRepository.findByCardNumber(cardNumber)).thenReturn(bankAccount);
 
         BankAccount response = bankAccountService.getByCardNumber(cardNumber);
         assertEquals(cardNumber, response.getCardNumber());
-        verify(bankAccountRepository).findBankAccountByCardNumber(cardNumber);
+        verify(bankAccountRepository).findByCardNumber(cardNumber);
 
     }
 

@@ -36,7 +36,7 @@ public class CartService {
     }
 
     protected Cart getCart(String cartId) {
-        return cartRepository.findCartByCartId(cartId);
+        return cartRepository.findByCartId(cartId);
     }
 
     @CacheEvict(value = "carts", key = "#cartId")

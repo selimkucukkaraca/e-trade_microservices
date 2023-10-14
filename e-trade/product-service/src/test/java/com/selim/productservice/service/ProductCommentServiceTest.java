@@ -22,6 +22,7 @@ class ProductCommentServiceTest extends TestUtil {
 
     private ProductCommentRepository productCommentRepository;
     private ProductCommentConverter productCommentConverter;
+    private ProductService productService;
     private UserServiceClient userServiceClient;
     private ProductCommentService productCommentService;
 
@@ -30,7 +31,11 @@ class ProductCommentServiceTest extends TestUtil {
     public void setUp() {
         productCommentRepository = mock(ProductCommentRepository.class);
         productCommentConverter = mock(ProductCommentConverter.class);
-        productCommentService = new ProductCommentService(productCommentRepository, productCommentConverter,userServiceClient);
+        productService = mock(ProductService.class);
+        userServiceClient = mock(UserServiceClient.class);
+        productCommentService = new ProductCommentService(
+                productCommentRepository, productCommentConverter,
+                productService,userServiceClient);
     }
 
     @Test
@@ -61,7 +66,7 @@ class ProductCommentServiceTest extends TestUtil {
         ProductComment productComment = getProductCommentList().get(0);
         String productCommentId = "test";
 
-        when(productCommentRepository.findProductCommentByProductCommentId(productCommentId)).thenReturn(Optional.ofNullable(productComment));
+        when(productCommentRepository.findByProductCommentId(productCommentId)).thenReturn(Optional.ofNullable(productComment));
 
         productCommentService.delete(productCommentId);
 
@@ -76,12 +81,12 @@ class ProductCommentServiceTest extends TestUtil {
         ProductComment productComment = getProductCommentList().get(0);
         String productCommentId = "test";
 
-        when(productCommentRepository.findProductCommentByProductCommentId(productCommentId)).thenReturn(Optional.ofNullable(productComment));
+        when(productCommentRepository.findByProductCommentId(productCommentId)).thenReturn(Optional.ofNullable(productComment));
 
         ProductComment response = productCommentService.getProductCommentByProductCommentId(productCommentId);
 
         assertEquals(response, productComment);
-        verify(productCommentRepository).findProductCommentByProductCommentId(productCommentId);
+        verify(productCommentRepository).findByProductCommentId(productCommentId);
 
     }
 
@@ -92,14 +97,14 @@ class ProductCommentServiceTest extends TestUtil {
         ProductCommentDto productCommentDto = getProductCommentDtoList().get(0);
         String productCommentId = "test";
 
-        when(productCommentRepository.findProductCommentByProductCommentId(productCommentId)).thenReturn(Optional.ofNullable(productComment));
+        when(productCommentRepository.findByProductCommentId(productCommentId)).thenReturn(Optional.ofNullable(productComment));
         assert productComment != null;
         when(productCommentConverter.convertToDto(productComment)).thenReturn(productCommentDto);
 
         ProductCommentDto response = productCommentService.getByProductCommentId(productCommentId);
 
         assertEquals(productCommentDto, response);
-        verify(productCommentRepository).findProductCommentByProductCommentId(productCommentId);
+        verify(productCommentRepository).findByProductCommentId(productCommentId);
         verify(productCommentConverter).convertToDto(productComment);
 
     }

@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BankAccountRepository extends JpaRepository<BankAccount, Long> {
 
-    BankAccount findBankAccountByCardNumber(String cardNumber);
+    BankAccount findByCardNumber(String cardNumber);
 }

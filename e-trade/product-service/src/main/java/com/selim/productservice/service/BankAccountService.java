@@ -19,16 +19,16 @@ public class BankAccountService {
     }
 
     protected BankAccount getByCardNumber(String cardNumber) {
-        return bankAccountRepository.findBankAccountByCardNumber(cardNumber);
+        return bankAccountRepository.findByCardNumber(cardNumber);
     }
 
     protected boolean validateCreditCard(ConfirmCartRequest request) {
-        BankAccount bankAccount = bankAccountRepository.findBankAccountByCardNumber(request.getCardNumber());
+        BankAccount bankAccount = bankAccountRepository.findByCardNumber(request.getCardNumber());
 
         if (bankAccount.getCardNumber().equals(request.getCardNumber())
                 && bankAccount.getCvv() == request.getCvv()
                 && bankAccount.getNameAndLastname().equals(request.getNameAndSurname())) {
-            // && bankAccount.getExpirationDate().equals(request.getExpirationDate())) {    //TODO
+            // && bankAccount.getExpirationDate().equals(request.getExpirationDate())) {
             return true;
         } else {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "card not valid");

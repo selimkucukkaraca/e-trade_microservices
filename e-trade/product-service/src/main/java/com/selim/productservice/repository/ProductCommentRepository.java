@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface ProductCommentRepository extends JpaRepository<ProductComment, Long> {
 
-    Optional<ProductComment> findProductCommentByProductCommentId(String productCommentId);
+    Optional<ProductComment> findByProductCommentId(String productCommentId);
 
 }

@@ -34,12 +34,12 @@ public class BrandService {
 
     @Cacheable(value = "brands", key = "#brandId")
     public Brand getBrandByBrandId(String brandId) {
-        return brandRepository.findBrandByBrandId(brandId)
+        return brandRepository.findByBrandId(brandId)
                 .orElseThrow(() -> new GenericExistException("Brand not found: " + brandId));
     }
 
     @Cacheable(value = "brands", key = "#brand")
     public Brand getBrandByBrand(String brand) {
-        return brandRepository.findBrandByBrand(brand);
+        return brandRepository.findByBrand(brand);
     }
 }

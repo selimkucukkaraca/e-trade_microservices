@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface PromoCodeRepository extends JpaRepository<PromoCode, Long> {
 
-    Optional<PromoCode> findPromoCodeByPublicId(String publicId);
-    Optional<PromoCode> findPromoCodeByCodeText(String codeText);
+    Optional<PromoCode> findByPublicId(String publicId);
+    Optional<PromoCode> findByCodeText(String codeText);
 
 }

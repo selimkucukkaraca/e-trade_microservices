@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api/v1/sub-category")
 @CrossOrigin
@@ -17,7 +19,7 @@ public class SubCategoryController {
     private final SubCategoryService subCategoryService;
 
     @PostMapping
-    public ResponseEntity<SubCategoryDto> save(@RequestBody CreateSubCategoryRequest request) {
+    public ResponseEntity<SubCategoryDto> save(@RequestBody @Valid CreateSubCategoryRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(subCategoryService.save(request));
     }
 

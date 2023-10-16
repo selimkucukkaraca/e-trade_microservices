@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api/v1/seller-comment")
 @CrossOrigin
@@ -17,7 +19,7 @@ public class SellerCommentController {
     private final SellerCommentService sellerCommentService;
 
     @PostMapping
-    public ResponseEntity<SellerCommentDto> save(@RequestBody CreateSellerCommentRequest request) {
+    public ResponseEntity<SellerCommentDto> save(@RequestBody @Valid CreateSellerCommentRequest request) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(sellerCommentService.save(request));

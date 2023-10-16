@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api/v1/seller")
 @CrossOrigin
@@ -17,7 +19,7 @@ public class SellerController {
     private final SellerService sellerService;
 
     @PostMapping
-    public ResponseEntity<SellerDto> save(@RequestBody CreateSellerRequest request) {
+    public ResponseEntity<SellerDto> save(@RequestBody @Valid CreateSellerRequest request) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(sellerService.save(request));

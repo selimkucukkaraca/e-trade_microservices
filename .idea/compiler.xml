@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="shared" />
         <module name="core" />
+        <module name="config-server" />
         <module name="category-service" />
         <module name="api-gateway-service" />
         <module name="product-service" />
@@ -23,6 +24,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway-service" options="-parameters" />
       <module name="category-service" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="core" options="-parameters" />
       <module name="e-trade" options="-parameters" />
       <module name="entity" options="-parameters" />

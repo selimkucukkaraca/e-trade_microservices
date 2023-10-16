@@ -1,10 +1,8 @@
 package com.selim.categoryservice.service;
 
 import com.selim.categoryservice.TestUtil;
-import com.selim.categoryservice.repository.CategoryRepository;
 import com.selim.categoryservice.repository.SubCategoryRepository;
 import com.selim.entity.category.SubCategory;
-import com.selim.shared.category.converter.CategoryConverter;
 import com.selim.shared.category.converter.SubCategoryConverter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,20 +13,16 @@ import static org.mockito.Mockito.*;
 class SubCategoryServiceTest extends TestUtil {
 
     private SubCategoryRepository subCategoryRepository;
-    private SubCategoryConverter subCategoryConverter;
     private CategoryService categoryService;
+    private SubCategoryConverter subCategoryConverter;
     private SubCategoryService subCategoryService;
-    private CategoryRepository categoryRepository;
 
     @BeforeEach
     public void setUp() {
         subCategoryRepository = mock(SubCategoryRepository.class);
-        subCategoryConverter = mock(SubCategoryConverter.class);
         categoryService = mock(CategoryService.class);
-        subCategoryService = new SubCategoryService(subCategoryRepository,categoryService, subCategoryConverter);
-        categoryRepository = mock(CategoryRepository.class);
-        CategoryConverter categoryConverter = mock(CategoryConverter.class);
-        categoryService = new CategoryService(categoryRepository, categoryConverter);
+        subCategoryConverter = mock(SubCategoryConverter.class);
+        subCategoryService = new SubCategoryService(subCategoryRepository, categoryService,subCategoryConverter);
     }
 
     @Test
